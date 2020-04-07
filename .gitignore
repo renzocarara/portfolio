@@ -1,0 +1,6 @@
+# elenco file e directory che verranno ignorati da git
+node_modules/
+package-lock.json
+mix-manifest.json
+TEMP/
+.htaccess

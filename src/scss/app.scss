@@ -1,0 +1,24 @@
+// bootstarp 4.4.1
+@import '~bootstrap/scss/bootstrap.scss'; //
+// fontawesome 5.12.0
+$fa-font-path: 'fontawesome/fonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss'; //
+// simplebar - customize scrollbars
+@import '~simplebar/dist/simplebar.css';
+// my scss
+@import '_reset.scss';
+@import '_variables.scss';
+@import '_bootstrap_overrides.scss';
+@import '_common.scss';
+@import '_header.scss';
+@import '_jumbo.scss';
+@import '_section1_profile.scss';
+@import '_section2_skills.scss';
+@import '_section3_portfolio.scss';
+@import '_section4_contacts.scss';
+@import '_contact_result.scss'; // pagina contact_result 
+@import '_footer.scss';
+@import '_media_query.scss';

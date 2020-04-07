@@ -1,0 +1,57 @@
+/* sovrascritture dello stile di boostrap  */
+
+.navbar-dark .navbar-nav .nav-link {
+  /* meno opacità per le voci del menu */
+  color: rgba(255, 255, 255, .75);
+  /* meno padding top e bottom per le voci del menu */
+  padding: 5px;
+  margin: 0 5px 0 5px;
+
+  &.active,
+  &:hover {
+    /* cambio il colore del hover e dell'active sulle voci del menu */
+    color: $link-hover-color;
+  }
+}
+
+.navbar .navbar-brand {
+  margin-right: 0.3rem;
+}
+
+.section1 .card {
+  background-color: transparent;
+  border: none;
+}
+
+// elimino il bordo quando l'hamburger menu ha il focus
+.navbar-toggler:focus {
+  outline: none;
+}
+
+
+//== Tooltips
+//
+.tooltip-inner {
+  color: $white-color;
+  border: 1px solid $light-color;
+  background-color: $dark-color;
+}
+
+.tooltip.bs-tooltip-right .arrow:before {
+  border-right-color: $light-color !important;
+}
+
+.tooltip.bs-tooltip-left .arrow:before {
+  border-left-color: $light-color !important;
+}
+
+.tooltip.bs-tooltip-bottom .arrow:before {
+  border-bottom-color: $light-color !important;
+
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+  border-top-color: $light-color !important;
+}
+
+/* fine sovrascritture dello stile di boostrap  */

@@ -1,0 +1,55 @@
+/* section1 style */
+.bg-black-gradient {
+    background-image: linear-gradient(to bottom, rgba(22, 22, 22, 1), rgba(48, 49, 56, 0.4));
+}
+
+.section1 {
+    #my_face {
+        border-radius: 50%;
+        border: 3px solid $primary-color;
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+
+    #my_signature {
+        margin-top: 20px;
+        width: 140px;
+    }
+
+
+    .card-title {
+        color: $light-color;
+    }
+}
+
+.my-story {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 0;
+
+}
+
+// NOTA: 
+// classe simplebar-track: è il rettangolo che contiene la scrollbar copre tutta la dimensione del contenitore
+// classe simplebar-scrollbar è il contenitore della sola scrollbar (quella che si muove per intenderci)
+// pseudo classe: simplebar-scrollbar::before: è la scrollbar vera e propria (quella che si muove per intenderci)
+
+// .simplebar-track{background-color: lightgray;}
+
+// .simplebar-scrollbar{
+// background-color: $link-hover-color;
+// }
+
+.simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
+}
+
+.simplebar-scrollbar::before {
+    background-image: linear-gradient(-131deg, #026979 0%, #17A2B8 50%, #06dcfd 100%);
+}
+
+/* end section1 style */

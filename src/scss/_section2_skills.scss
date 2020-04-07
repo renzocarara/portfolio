@@ -1,0 +1,49 @@
+/* section2 style */
+#tech-skills {
+
+    // bordo della tab attiva
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        color: $light-color;
+        background-color: #fff;
+        background-color: $white-color;
+        border-color: $dark-color $dark-color #fff;
+    }
+
+    .nav-tabs .nav-link {
+        border: 1px solid transparent;
+        // border-top-left-radius: 0.25rem;
+        // border-top-right-radius: 0.25rem;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid $dark-color;
+    }
+
+    // colore del titolo delle tab non attive
+    a {
+        color: $dark-color;
+        // text-decoration: none;
+        // background-color: transparent;
+    }
+
+
+    .tab-pane {
+        min-height: 282px;
+    }
+
+    i {
+        vertical-align: sub;
+        color: $primary-color;
+        margin-top: 5px;
+    }
+
+    img {
+        vertical-align: sub;
+        height: 30px;
+        max-width: 40px;
+        margin-top: 5px;
+    }
+}
+
+/* end section2 style */

@@ -1,0 +1,25 @@
+ /* contact_result page style */
+
+ .section5 {
+
+     // viewport meno altezza (header + footer)
+     height: calc(100vh - 179px);
+
+     i {
+         color: $primary-color;
+         padding: 5px;
+
+         &:hover {
+             color: $light-color;
+         }
+     }
+
+     a {
+
+         &:hover {
+             text-decoration: none;
+         }
+     }
+ }
+
+ /* contact_result page style */

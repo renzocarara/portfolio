@@ -1,0 +1,23 @@
+/* footer styles */
+
+footer {
+
+    height: 104px;
+
+    a {
+        color: $white-color;
+
+        &:hover {
+            color: $link-hover-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.bg-overlay-footer {
+    /* overlay per la navigation bar */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background-color: transparent;
+}
+
+/* end footer style */

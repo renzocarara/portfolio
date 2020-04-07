@@ -1,0 +1,32 @@
+/* ----------------------------- MEDIA QUERY ------------------------------- */
+@media screen and (max-width:767px) {
+    .subtitle {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .subtitle {
+        font-size: 24px;
+    }
+
+    // resize del box del recaptcha
+    .g-recaptcha {
+        transform: scale(0.77);
+        -webkit-transform: scale(0.77);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
+}
+
+@media screen and (max-width:440px) {
+    .subtitle {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .subtitle {
+        font-size: 16px;
+    }
+}

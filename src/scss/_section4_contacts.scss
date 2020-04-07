@@ -1,0 +1,43 @@
+ /* section4 style */
+ .section4 {
+
+     i {
+         color: $primary-color;
+         padding: 5px;
+         margin-right: 20px;
+
+     }
+
+     .contact-links:hover {
+         color: $light-color;
+     }
+
+     .checkbox_square {
+         height: 25px;
+         width: 25px;
+         vertical-align: middle;
+         margin: 0;
+         cursor: pointer;
+     }
+
+     .star {
+         font-size: 20px;
+         color: $link-hover-color;
+     }
+
+     input,
+     textarea {
+         border: 2px solid $primary-color;
+     }
+
+     #contact-send-btn {
+         width: 180px;
+     }
+
+     [for="acceptance"] {
+         cursor: pointer;
+     }
+
+ }
+
+ /* end section4 style */
