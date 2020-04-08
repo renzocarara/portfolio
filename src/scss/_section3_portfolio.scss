@@ -1,5 +1,47 @@
 /* section1 style */
 .section3 {
        background-color: $dark-color;
+
+
+       .my-slide {
+
+              // width: 200px;
+              // height: 100px;
+
+              img {
+                     height: 100%;
+                     width: 100%;
+                     // object-fit: cover;
+                     // object-position: center;
+              }
+
+       }
+
+       .slider-buttons {
+
+              &:focus {
+                     outline: none;
+                     // box-shadow: none;
+              }
+       }
+
+       .slider-arrow {
+              background-color: $dark-color;
+              color: $primary-color;
+              cursor: pointer;
+
+              &:focus {
+                     outline: none;
+                     // box-shadow: none;
+              }
+
+              &:hover {
+                     color: $light-color;
+              }
+       }
 }
+
+
+
+
 /* end section1 style */

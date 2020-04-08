@@ -20,7 +20,8 @@
     "aos": "^2.3.4",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "simplebar": "^5.1.0"
+    "simplebar": "^5.1.0",
+    "tiny-slider": "^2.9.2"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",

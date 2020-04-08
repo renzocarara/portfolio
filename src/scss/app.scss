@@ -6,8 +6,19 @@ $fa-font-path: 'fontawesome/fonts';
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss'; //
+//
 // simplebar - customize scrollbars
-@import '~simplebar/dist/simplebar.css';
+@import '~simplebar/dist/simplebar.css'; //
+//
+// animate.css (animazioni)
+@import '~animate.css/animate.min.css'; //
+//
+// aos (animazioni)
+@import '~aos/dist/aos.css'; //
+//
+// tiny slider 2 (carousel)
+@import '~tiny-slider/dist/tiny-slider.css'; //
+//
 // my scss
 @import '_reset.scss';
 @import '_variables.scss';

@@ -1,22 +1,28 @@
 // requires e inizializzazioni
+// jquery
 var $ = require('jquery');
-
+//
+// Bootstrap
 require('../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js');
-
+//
 // abilito Boostrap tooltip
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
-
+//
 // abilito Boostrap Popover
 $(function () {
     $('[data-toggle="popover"]').popover();
 });
-
+//
 // simplebar - customize scrollbars
 require('simplebar');
-
-
+//
+// tiny slider 2
+import {
+    tns
+} from "../../node_modules/tiny-slider/src/tiny-slider.js";
+//
 $(document).ready(function () {
 
     // applico o rimuovo uno sfondo alla navbar in base allo scroll della pagina
@@ -37,6 +43,9 @@ $(document).ready(function () {
 
     // visualizzo lo spinner quando l'utente preme "Invia"
     showContactSpinner();
+
+    // creo slider per la sezione portfolio
+    createSlider();
 
 });
 
@@ -163,4 +172,43 @@ function showContactSpinner() {
         $('#contact-send-btn-txt').text("Attendi...");
         $('#contact-spinner').removeClass("hidden").addClass("visible");
     });
+}
+
+function createSlider() {
+    // DESCRIZIONE:
+    // creo lo slider con la libreria tiny slider 2
+
+    var slider = tns({
+        "container": ".my-slider",
+        "items": 1,
+        "gutter": 20,
+        "controlsPosition": "bottom",
+        "controlsContainer": ".slider-buttons",
+
+        "navPosition": "bottom",
+        "navAsThumbnails": true, // 1 dot per ogni slide
+
+        "preventActionWhenRunning": true,
+
+        // breakpoint che scatta da n px in su
+        "responsive": {
+            "768": {
+                "items": 2
+            },
+            "1200": {
+                "items": 3,
+            }
+        },
+
+        // "mode": "gallery",
+        // "animateIn": "jello",
+        // "animateOut": "rollOut",
+        // "speed": 1000,
+
+        // "swipeAngle": false,
+
+        "speed": 400,
+        "mouseDrag": true
+    });
+
 }

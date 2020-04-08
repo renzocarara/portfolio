@@ -32,10 +32,10 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
 
-    <!-- animate.css -->
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-    <!-- aos (animazioni) -->
-    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="node_modules/dist/tiny-slider.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css"> -->
+
+
     <!-- my css -->
     <link rel="stylesheet" href="public/css/style.css" />
 
@@ -176,13 +176,13 @@
                             <div class="tab-content text-secondary mt-3 ml-3" id="nav-tabContent" data-aos="fade-left" data-aos-duration="1000">
                                 <div class="tab-pane fade show active" id="nav-tech" role="tabpanel" aria-labelledby="nav-tech-tab">
                                     <div class="row">
-                                        <div class="col-12 col-sm-6 col-md-4 pl-0">
+                                        <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
                                             <i class="fab fa-html5 fa-2x"></i> HTML5<br>
                                             <i class="fab fa-css3-alt fa-2x"></i> CSS3<br>
                                             <i class="fab fa-sass fa-2x"></i> Sass<br>
                                             <i class="fab fa-bootstrap fa-2x"></i> Bootstrap<br>
                                         </div>
-                                        <div class=" col-12 col-sm-6 order-sm-last col-md-4 pl-0">
+                                        <div class=" col-12 col-sm-6 order-sm-last col-md-4 pl-2 pr-2">
                                             <i class="fab fa-js-square fa-2x"></i> Javascript<br>
                                             <img src="public/assets/images/techs/jquery.png" alt="jquery logo"> Jquery<br>
                                             <img src="public/assets/images/techs/momentjs.png" alt="moment.js logo"> Moment.js<br>
@@ -190,7 +190,7 @@
 
 
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4  pl-0 order-md-last">
+                                        <div class="col-12 col-sm-6 col-md-4  pl-2 pr-2 order-md-last">
                                             <i class="fab fa-php fa-2x"></i> PHP<br>
                                             <i class="fab fa-laravel fa-2x"></i> Laravel<br>
                                             <img src="public/assets/images/techs/mysql.png" alt="mysql logo"> MySQL<br>
@@ -225,7 +225,7 @@
             </div> <!-- container -->
         </section>
 
-        <section class=" section3 text-light">
+        <section class="section3 text-light">
             <a class="anchor-offset" id="portfolio"></a>
             <div class="container">
                 <h2><span class=" light-color">P</span>ortfolio</h2>
@@ -233,8 +233,26 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card-body">
-                                <h5 class="card-title">WORK IN PROGRESS</h5>
-                                <p class="card-text">Lorem ipsumtias, voor voluptates ratione rem eos voluptas, modi quasi ab deserunt non?</p>
+                                <p class="card-title h5">ecco alcuni miei lavori:</p>
+
+                                <!-- slider -->
+                                <div class="my-slider">
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/animated_class8_snap.png" alt="class8 animata"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/boolflix_snap.png" alt="boolflix"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/boolzap_snap.png" alt="boolzapp"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/digital_ocean_snap.png" alt="digital ocean replica"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/js-jq-ajax-api-musica_snap.png" alt="api card musicali"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/laravel-boolpress_snap.png" alt="laravel boolpress"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/php-hotel-crud_snap.png" alt="php hotel crud"></div>
+                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/spotifyweb_snap.png" alt="spotify web"></div>
+                                </div>
+
+                                <!-- frecce avanti/indietro dello slider -->
+                                <div class="slider-buttons d-flex justify-content-center">
+                                    <i class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2"></i>
+                                    <i class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow"></i>
+                                </div>
+
                             </div>
                         </div>
                     </div> <!-- container -->
