@@ -27172,7 +27172,9 @@ $(document).ready(function () {
     // creo dinamicamente le slides dello slider (uso Handlebars.js)
     createSlides(); // creo dinamicamente i modals associati alle slides dello slider (uso Handlebars.js)
 
-    createSlideModals(); // applico o rimuovo uno sfondo alla navbar in base allo scroll della pagina
+    createSlideModals(); // abilito i tooltips sugli elementi dinamici appena creati (slides e modals)
+
+    enableTooltipsOnDynamic(); // applico o rimuovo uno sfondo alla navbar in base allo scroll della pagina
 
     handleNavbarOnScroll(); // faccio sparire il menu hamburger quando clicco su una voce del menu o
     // sul bottone BTT (back to top)
@@ -27187,7 +27189,9 @@ $(document).ready(function () {
 
     showContactSpinner(); // creo lo slider per la sezione portfolio (uso libreria Tiny Slider 2)
 
-    createSlider();
+    createSlider(); // al click faccio sparire i tooltip visualizzati
+
+    hideTooltips();
   }
 }); // -------------------------------- FUNCTIONs ---------------------------------
 
@@ -27202,6 +27206,7 @@ function createSlides() {
     // creo un oggetto con i dati che mi servono
     var slideInfo = {
       'name': slide_DB[i].name,
+      'title': slide_DB[i].title,
       'img_filename': slide_DB[i].img_filename,
       'alt_img_desc': slide_DB[i].alt_img_desc
     }; // leggo il codice html dal template HANDLEBARS
@@ -27235,7 +27240,7 @@ function createSlideModals() {
       'description': slide_DB[i].description,
       'technologies': slide_DB[i].technologies,
       'code_link': slide_DB[i].code_link,
-      'site_link': slide_DB[i].site_link == "not_available" ? "" : '<a href="' + slide_DB[i].site_link + '" target="_blank" class="tooltip-on-modal" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>'
+      'site_link': slide_DB[i].site_link == "not_available" ? "" : '<a href="' + slide_DB[i].site_link + '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>'
     }; // leggo il codice html dal template HANDLEBARS
 
     var modalTemplate = $('#template-slide-modal').html(); // do in pasto a HANDLEBARS il codice html, lui mi restituisce una funzione
@@ -27247,10 +27252,13 @@ function createSlideModals() {
 
     $('#slide-modals').append(slideModal);
   } // fine ciclo scansione dell'array slide_DB
-  // abilito i tooltips solo dopo che i modal sono stati creati nel DOM
 
+}
 
-  $('.tooltip-on-modal').tooltip({
+function enableTooltipsOnDynamic() {
+  // DESCRIZIONE:
+  // abilito i tooltips solo dopo che tutti i modal, e in precedenza le slide, sono stati creati nel DOM
+  $('.tooltip-on-dynamic-el').tooltip({
     trigger: 'hover' // evito che il tooltip rimanga visualizzato dopo un click
 
   });
@@ -27384,6 +27392,19 @@ function createSlider() {
     },
     "speed": 400,
     "mouseDrag": true
+  });
+}
+
+function hideTooltips() {
+  // DESCRIZIONE:
+  // al click su di un elemento che ha un tooltip, nascondo il tooltip stesso
+  // NOTA: su gli elementi creati dinamicamente (i.e. le slide dello slider e i modals)
+  // i tooltip non sono associati con l'attributo data-toggle, ma con una classe (tooltip-on-dynamic-el)
+  $('[data-toggle="tooltip"]').click(function () {
+    $('[data-toggle="tooltip"]').tooltip('hide');
+  });
+  $(".tooltip-on-dynamic-el").click(function () {
+    $(".tooltip-on-dynamic-el").tooltip('hide');
   });
 }
 
