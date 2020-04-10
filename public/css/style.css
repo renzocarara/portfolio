@@ -16903,6 +16903,9 @@ h6 {
   height: 100%;
   width: 100%;
 }
+.section3 .my-slide img:hover {
+  cursor: pointer;
+}
 .section3 .slider-buttons:focus {
   outline: none;
 }

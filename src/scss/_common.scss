@@ -1,9 +1,7 @@
 /* commom style */
 
 body {
-  // font-family: Tahoma, sans-serif;
-  // font-family: 'Montserrat', sans-serif;
-  // font-family: 'Lato', sans-serif;
+
   font-family: #{$ff-text};
   position: relative;
 }
@@ -145,8 +143,6 @@ h6 {
 
 .tns-nav>.tns-nav-active {
   background: $primary-color;
-
-
 }
 
 /*  end commom style */

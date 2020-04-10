@@ -2,19 +2,17 @@
 .section3 {
        background-color: $dark-color;
 
-
        .my-slide {
 
-              // width: 200px;
-              // height: 100px;
 
               img {
                      height: 100%;
                      width: 100%;
-                     // object-fit: cover;
-                     // object-position: center;
-              }
 
+                     &:hover {
+                            cursor: pointer;
+                     }
+              }
        }
 
        .slider-buttons {

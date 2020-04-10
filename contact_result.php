@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no" />
     <meta name="Description" content="Renzo Carara - web developer - Portfolio - Invio messaggio" />
     <meta name="author" content="Renzo Carara" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />

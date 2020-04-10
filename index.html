@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no" />
     <meta name="Description" content="Renzo Carara - web developer - Portfolio" />
     <meta name="author" content="Renzo Carara" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -31,10 +31,6 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-
-    <!-- <link rel="stylesheet" href="node_modules/dist/tiny-slider.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css"> -->
-
 
     <!-- my css -->
     <link rel="stylesheet" href="public/css/style.css" />
@@ -229,36 +225,26 @@
             <a class="anchor-offset" id="portfolio"></a>
             <div class="container">
                 <h2><span class=" light-color">P</span>ortfolio</h2>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card-body">
-                                <p class="card-title h5">ecco alcuni miei lavori:</p>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-body">
+                            <p class="card-title h5">ecco alcuni miei lavori:</p>
 
-                                <!-- slider -->
-                                <div class="my-slider">
-                                    <!-- dimensioni immagini 1303 x 712 -->
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/animated_class8_snap.png" alt="class8 animata"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/boolflix_snap.png" alt="boolflix"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/boolzap_snap.png" alt="boolzapp"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/digital_ocean_snap.png" alt="digital ocean replica"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/js-jq-ajax-api-musica_snap.png" alt="api card musicali"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/laravel-boolpress_snap.png" alt="laravel boolpress"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/php-hotel-crud_snap.png" alt="php hotel crud"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/spotifyweb_snap.png" alt="spotify web"></div>
-                                    <div class="text-center my-slide"><img class="img-fluid" src="public/assets/images/slider/renzocarara_oldsite.png" alt="renzocarara old site"></div>
-                                </div>
-
-                                <!-- frecce avanti/indietro dello slider -->
-                                <div class="slider-buttons d-flex justify-content-center">
-                                    <i class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2"></i>
-                                    <i class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow"></i>
-                                </div>
-
+                            <!-- slider -->
+                            <div class="my-slider">
+                                <!-- dimensioni immagini 1303 x 712 -->
+                                <!-- DINAMICO -->
                             </div>
+
+                            <!-- frecce avanti/indietro dello slider -->
+                            <div class="slider-buttons d-flex justify-content-center">
+                                <i class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2" data-toggle="tooltip" data-placement="bottom" title="Precedente"></i>
+                                <i class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow" data-toggle="tooltip" data-placement="bottom" title="Successiva"></i>
+                            </div>
+
                         </div>
-                    </div> <!-- container -->
-                </div>
+                    </div>
+                </div> <!-- row -->
             </div> <!-- container -->
         </section>
 
@@ -273,7 +259,6 @@
                             <p><span class="star">*</span> <span style="font-size:0.8em">Campi obbligatori</span></p>
 
                             <form id="contact-form" action="contact.php" method="post" enctype="multipart/form-data">
-                                <!-- <form action="contact.php" method="post" enctype="multipart/form-data" onsubmit="return checkEmail(this)"> -->
                                 <div class=" form-row">
                                     <div class="col-md-6 col-lg-4 mb-3">
                                         <label for="name">Nome:</label><span class="star">*</span>
@@ -356,14 +341,46 @@
         <i class="fas fa-arrow-alt-circle-up fa-3x"></i>
     </a>
 
-    <!-- jquery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-    <!-- NOTA: bootstrap usa di default la versione slim (senza AJAX ed effetti), io includo quella completa -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
-    <!-- popper -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-    <!-- js bootstrap -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+    <!-- Modals associati alle slides dello slider -->
+    <div id="slide-modals">
+        <!-- DINAMICO -->
+    </div>
+
+    <!-- ++++++++++++++++++ HANDLEBARS TEMPLATEs +++++++++++++++++++++++++++ -->
+    <!-- template per la creazione delle slides all'interno dello slider -->
+    <script id="template-slide" type="text/x-handlebars-template">
+        {{!-- template per la creazione di un singola slide dello slider --}}
+        <div class="my-slide" data-toggle="modal" data-target="#{{ name }}Modal"><img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}"></div>
+    </script>
+
+    <!-- template del modal associato ad ogni singola slide -->
+    <script id="template-slide-modal" type="text/x-handlebars-template">
+        <div class="modal fade" id="{{ name }}Modal" tabindex="-1" role="dialog" aria-labelledby="{{ name }}ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content bg-dark-color text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="{{ name }}ModalLabel"><strong>{{ title }}</strong></h5>
+                        <button type="button" class="close text-link" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times fa-lg"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}">
+                    </div>
+                    <div class="modal-body">
+                        <strong>Descrizione</strong>: {{ description }}<br>
+                        <strong>Tecnologie</strong>: {{ technologies }}
+                    </div>
+                    <div class="modal-footer">
+                        {{{ site_link }}}
+                        <a href="{{ code_link }}" target="_blank" class="tooltip-on-modal"  data-placement="top" title="Esplora il codice"><i class="fas fa-code fa-3x text-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- ++++++++++++++++++ HANDLEBARS TEMPLATEs +++++++++++++++++++++++++++ -->
 
     <!-- aos -->
     <script src="node_modules/aos/dist/aos.js"></script>
