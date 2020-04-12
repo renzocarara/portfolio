@@ -1,90 +1,3 @@
-// array di oggetti, un singolo oggetto è una slide
-//
-var slide_DB = [{
-    'name': 'class8',
-    'img_filename': 'animated_class8_snap.png',
-    'alt_img_desc': 'animated class8',
-    'title': 'Animazione CSS',
-    'description': 'esempio basico di animazione CSS. Responsive.',
-    'technologies': 'HTML, CSS',
-    'code_link': 'https://github.com/renzocarara/animated-class8',
-    'site_link': 'https://renzocarara.github.io/animated-class8/'
-}, {
-    'name': 'boolflix',
-    'img_filename': 'boolflix_snap.png',
-    'alt_img_desc': 'boolflix',
-    'title': 'Boolflix - interrogazione di TheMovieDB',
-    'description': "applicazione simil-Netflix che legge tramite API da un DB di movies e serieTV e permette all'utente di effettuare ricerche filtrate tramite un 'interfaccia. Realizzato con HTML, CSS, JS, Jquery, Handlebars, Ajax. Responsive",
-    'technologies': 'HTML, CSS, JS, Handlebars, API, AJAX',
-    'code_link': 'https://github.com/renzocarara/ajax-ex-boolflix',
-    'site_link': 'https://renzocarara.github.io/ajax-ex-boolflix/'
-}, {
-    'name': 'boolzapp',
-    'img_filename': 'boolzap_snap.png',
-    'alt_img_desc': 'bolzapp',
-    'title': 'Boolzapp, chat application',
-    'description': "replica dell'interfaccia grafica dell'applicazione WhatsApp Web. Non responsive.",
-    'technologies': 'HTML, CSS, JS, Jquery, Handlebars',
-    'code_link': 'https://github.com/renzocarara/js-html-css-boolzap',
-    'site_link': 'https://renzocarara.github.io/js-html-css-boolzap/'
-}, {
-    'name': 'digital_ocean',
-    'img_filename': 'digital_ocean_snap.png',
-    'alt_img_desc': 'digital ocean website',
-    'title': 'Digital Ocean website replica',
-    'description': "replica della pagina principale del sito digitalocean.com, dopo ca 30gg di formazione col corso Boolean Careers.",
-    'technologies': 'HTML, CSS',
-    'code_link': 'https://github.com/renzocarara/html-css-digitalocean',
-    'site_link': 'https://renzocarara.github.io/html-css-digitalocean'
-}, {
-    'name': 'music_card',
-    'img_filename': 'js-jq-ajax-api-musica_snap.png',
-    'alt_img_desc': 'music cards',
-    'title': ' Music cards selezionabili per genere',
-    'description': "appliczione che tramite API e chiamate AJAX, legge informazioni su dischi musicali e li visualizza. Usato JavaScript per filtrare i risultati.",
-    'technologies': 'HTML, CSS, JS, AJAX, API',
-    'code_link': 'https://github.com/renzocarara/js-jq-ajax-api-musica',
-    'site_link': 'https://renzocarara.github.io/js-jq-ajax-api-musica/'
-}, {
-    'name': 'boolpress',
-    'img_filename': 'laravel-boolpress_snap.png',
-    'alt_img_desc': 'Boolpress',
-    'title': 'Boolpress Blog',
-    'description': " realizzazione di un simil-Blog. Utilizzati i componenti preconfenzionati per la parte di autenticazione. Gestita traduzione bilingua del sito. Implementate CRUD. Implementate API per soggetto esterno che vuole accedere al DB. Disegnato DB con relazioni uno a uno, uno a molti e molti a molti. Tramite Laravel, realizzata sezione contatti con invio e-mail di conferma ad amministratore ed utente.",
-    'technologies': 'LARAVEL, BOOTSTRAP, MySQL',
-    'code_link': 'https://github.com/renzocarara/laravel-boolpress',
-    'site_link': 'not_available'
-}, {
-    'name': 'hotel_crud',
-    'img_filename': 'php-hotel-crud_snap.png',
-    'alt_img_desc': 'Hotel DB',
-    'title': 'Gestione Hotel DB',
-    'description': "gestione di un DB di un hotel tramite applicativo in PHP. Implementazione delle operazioni CRUD, utilizzo di query MySQL per interagire con il DB.",
-    'technologies': 'PHP, MySQL',
-    'code_link': 'https://github.com/renzocarara/php-hotel-crud',
-    'site_link': 'not_available'
-}, {
-    'name': 'spotifyweb',
-    'img_filename': 'spotifyweb_snap.png',
-    'alt_img_desc': 'spotifyweb',
-    'title': "Spotify web replica UI",
-    'description': "replica della pura interfaccia grafica della pagina principale del sito spotify web",
-    'technologies': 'HTML, CSS',
-    'code_link': 'https://github.com/renzocarara/html-css-spotifyweb',
-    'site_link': 'https://renzocarara.github.io/html-css-spotifyweb/'
-}, {
-    'name': 'rc_oldsite',
-    'img_filename': 'renzocarara_oldsite.png',
-    'alt_img_desc': 'renzo carara vecchi sito web',
-    'title': 'Renzo Carara, il mio primo sito web',
-    'description': "il mio primo sito web sviluppato completamente da autodidatta. Partendo da zero.",
-    'technologies': 'HTML, CSS, JS, PHP',
-    'code_link': 'https://github.com/renzocarara/cv-classic-rc',
-    'site_link': 'https://renzocarara.github.io/cv-classic-rc/'
-}];
-// ---------------------------------------------------------------------------------------
-
-
 // requires e inizializzazioni ---------------------------------------------
 //
 // jquery
@@ -118,23 +31,37 @@ import {
 } from "../../node_modules/tiny-slider/src/tiny-slider.js";
 //
 
-
 // -------------------------------------------------------------------------
 //
-
-
 $(document).ready(function () {
 
-    if ($('#home').length > 0) { // verifico se sono sulla pagina index.html
+    if ($('#home').length > 0) { // verifico se sono sulla pagina inizialeindex.html
 
-        // creo dinamicamente le slides dello slider (uso Handlebars.js)
-        createSlides();
+        // chiamata AJAX per recuperare dati dal DB
+        $.ajax({
+            url: 'read_db.php',
+            method: 'get',
+            success: function (slidesData) {
 
-        // creo dinamicamente i modals associati alle slides dello slider (uso Handlebars.js)
-        createSlideModals();
+                // trasformo i dati da stringa JSON in un oggetto JS
+                var slidesDataJSObj = JSON.parse(slidesData);
+                // creo dinamicamente le slides dello slider (uso Handlebars.js)
+                createSlides(slidesDataJSObj);
+                // creo dinamicamente i modals associati alle slides dello slider (uso Handlebars.js)
+                createSlideModals(slidesDataJSObj);
+                // creo lo slider per la sezione portfolio (uso libreria Tiny Slider 2)
+                createSlider();
+                // abilito i tooltips sugli elementi dinamici creati (slides e modals)
+                enableTooltipsOnDynamic();
+                // al click faccio sparire i tooltip visualizzati
+                hideTooltips();
+            },
+            error: function (error) {
+                console.log(error);
 
-        // abilito i tooltips sugli elementi dinamici appena creati (slides e modals)
-        enableTooltipsOnDynamic();
+                alert("ERRORE! non sono riuscito a recuperare i dati...");
+            }
+        });
 
         // applico o rimuovo uno sfondo alla navbar in base allo scroll della pagina
         handleNavbarOnScroll();
@@ -155,34 +82,28 @@ $(document).ready(function () {
         // visualizzo lo spinner quando l'utente preme "Invia"
         showContactSpinner();
 
-        // creo lo slider per la sezione portfolio (uso libreria Tiny Slider 2)
-        createSlider();
-
-        // al click faccio sparire i tooltip visualizzati
-        hideTooltips();
     }
-
 });
 
 
 // -------------------------------- FUNCTIONs ---------------------------------
 
-function createSlides() {
+function createSlides(slidesDataJSObj) {
     // DESCRIZIONE:
     // creo dinamicamente gli elementi che compongono lo slider, sono dei <div> con all'interno un'immagine
     // utilizzo un template di handlebars. I dati con cui valorizzare il template li leggo da una struttura dati
-    // definita all'inizio di questo file js (slide_DB). E' array di oggetti dove ogni oggetto contiene i dati della slide
+    // definita all'inizio di questo file js (slidesDataJSObj). E' array di oggetti dove ogni oggetto contiene i dati della slide
     // incluse le informazioni che veranno poi visualizzate (tramite un modal) s e l'utente clicca sulla slide stessa
 
-    // ciclo lo slide_DB e scorro tutti gli elementi (ogni elemento è una slide)
-    for (var i = 0; i < slide_DB.length; i++) {
+    // ciclo lo slidesDataJSObj e scorro tutti gli elementi (ogni elemento è una slide)
+    for (var i = 0; i < slidesDataJSObj.length; i++) {
 
         // creo un oggetto con i dati che mi servono
         var slideInfo = {
-            'name': slide_DB[i].name,
-            'title': slide_DB[i].title,
-            'img_filename': slide_DB[i].img_filename,
-            'alt_img_desc': slide_DB[i].alt_img_desc
+            'name': slidesDataJSObj[i].name,
+            'title': slidesDataJSObj[i].title,
+            'img_filename': slidesDataJSObj[i].img_filename,
+            'alt_img_desc': slidesDataJSObj[i].alt_img_desc
         };
 
         // leggo il codice html dal template HANDLEBARS
@@ -198,31 +119,31 @@ function createSlides() {
         // inserisco la slide sulla pagina con il codice HTML che ho appena generato dal template HANDLEBARS
         $('.my-slider').append(slide);
 
-    } // fine ciclo scansione dell'array slide_DB
+    } // fine ciclo scansione dell'array slidesDataJSObj
 }
 
-function createSlideModals() {
+function createSlideModals(slidesDataJSObj) {
 
     // DESCRIZIONE:
     // creo dinamicamente i modals associati ad ogni singola slide, utilizzo un template di handlebars.
     // I dati con cui valorizzare il template li leggo da una struttura dati
-    // definita all'inizio di questo file js (slide_DB). E' array di oggetti dove ogni oggetto contiene i dati della slide
+    // definita all'inizio di questo file js (slidesDataJSObj). E' array di oggetti dove ogni oggetto contiene i dati della slide
     // NOTA la chiave 'site-link' può essere vuota, in questo caso NON devo "appendere" codice sulla pagina HTML
 
-    // ciclo lo slide_DB e scorro tutti gli elementi (ogni elemento è una slide)
-    for (var i = 0; i < slide_DB.length; i++) {
+    // ciclo lo slidesDataJSObj e scorro tutti gli elementi (ogni elemento è una slide)
+    for (var i = 0; i < slidesDataJSObj.length; i++) {
 
-        // creo un oggetto con i dati che mi servono, leggondoli dall'array slide_DB
+        // creo un oggetto con i dati che mi servono, leggondoli dall'array slidesDataJSObj
         var slideModalInfo = {
-            'name': slide_DB[i].name,
-            'img_filename': slide_DB[i].img_filename,
-            'alt_img_desc': slide_DB[i].alt_img_desc,
-            'title': slide_DB[i].title,
-            'description': slide_DB[i].description,
-            'technologies': slide_DB[i].technologies,
-            'code_link': slide_DB[i].code_link,
-            'site_link': (slide_DB[i].site_link == "not_available") ?
-                "" : '<a href="' + slide_DB[i].site_link + '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>'
+            'name': slidesDataJSObj[i].name,
+            'img_filename': slidesDataJSObj[i].img_filename,
+            'alt_img_desc': slidesDataJSObj[i].alt_img_desc,
+            'title': slidesDataJSObj[i].title,
+            'description': slidesDataJSObj[i].description,
+            'technologies': slidesDataJSObj[i].technologies,
+            'code_link': slidesDataJSObj[i].code_link,
+            'site_link': (slidesDataJSObj[i].site_link == "not_available") ?
+                "" : '<a href="' + slidesDataJSObj[i].site_link + '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>'
         };
 
         // leggo il codice html dal template HANDLEBARS
@@ -238,7 +159,7 @@ function createSlideModals() {
         // inserisco la slide sulla pagina con il codice HTML che ho appena generato dal template HANDLEBARS
         $('#slide-modals').append(slideModal);
 
-    } // fine ciclo scansione dell'array slide_DB
+    } // fine ciclo scansione dell'array slidesDataJSObj
 
 }
 
