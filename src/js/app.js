@@ -39,9 +39,14 @@ $(document).ready(function () {
 
         // chiamata AJAX per recuperare dati dal DB
         $.ajax({
-            url: 'read_db.php',
+            url: 'db_read.php',
             method: 'get',
             success: function (slidesData) {
+
+                console.log("success");
+                console.log("slidesData:", slidesData);
+
+
 
                 // trasformo i dati da stringa JSON in un oggetto JS
                 var slidesDataJSObj = JSON.parse(slidesData);

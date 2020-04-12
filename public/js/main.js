@@ -27086,10 +27086,12 @@ $(document).ready(function () {
     // verifico se sono sulla pagina inizialeindex.html
     // chiamata AJAX per recuperare dati dal DB
     $.ajax({
-      url: 'read_db.php',
+      url: 'db_read.php',
       method: 'get',
       success: function success(slidesData) {
-        // trasformo i dati da stringa JSON in un oggetto JS
+        console.log("success");
+        console.log("slidesData:", slidesData); // trasformo i dati da stringa JSON in un oggetto JS
+
         var slidesDataJSObj = JSON.parse(slidesData); // creo dinamicamente le slides dello slider (uso Handlebars.js)
 
         createSlides(slidesDataJSObj); // creo dinamicamente i modals associati alle slides dello slider (uso Handlebars.js)
