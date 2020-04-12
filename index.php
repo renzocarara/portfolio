@@ -97,7 +97,7 @@
         <section class="section1 bg-black-gradient text-light">
             <a class="anchor-offset" id="profile"></a>
             <div class="container">
-                <h2><span class="light-color">P</span>rofilo</h2>
+                <h2 data-aos="fade-down" data-aos-duration="500"><span class="light-color">P</span>rofilo</h2>
                 <div class="row">
 
                     <div class="col-12 col-md-12 col-lg-4 card">
@@ -224,7 +224,7 @@
         <section class="section3 text-light">
             <a class="anchor-offset" id="portfolio"></a>
             <div class="container">
-                <h2><span class=" light-color">P</span>ortfolio</h2>
+                <h2 data-aos="fade-down" data-aos-duration="500"><span class="light-color">P</span>ortfolio</h2>
                 <div class="row">
                     <div class="col-12">
                         <div class="card-body">
@@ -237,11 +237,10 @@
                             </div>
 
                             <!-- frecce avanti/indietro dello slider -->
-                            <div class="slider-buttons d-flex justify-content-center">
-                                <i class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2" data-toggle="tooltip" data-placement="bottom" title="Precedente"></i>
-                                <i class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow" data-toggle="tooltip" data-placement="bottom" title="Successiva"></i>
+                            <div class="slider-buttons d-flex justify-content-center" >
+                                <i data-aos="fade-right" data-aos-duration="1000" class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2" data-toggle="tooltip" data-placement="bottom" title="Precedente"></i>
+                                <i data-aos="fade-left" data-aos-duration="1000" class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow" data-toggle="tooltip" data-placement="bottom" title="Successiva"></i>
                             </div>
-
                         </div>
                     </div>
                 </div> <!-- row -->
@@ -251,65 +250,63 @@
         <section class="section4 bg-dark text-light">
             <a class="anchor-offset" id="contatti"></a>
             <div class="container">
-                <h2></i><span class=" light-color">C</span>ontatti</h2>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="h5 mt-4"><i class="far fa-envelope fa-2x"></i>Lascia un messaggio:</p>
-                            <p><span class="star">*</span> <span style="font-size:0.8em">Campi obbligatori</span></p>
+                <h2><span class="light-color">C</span>ontatti</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="h5 mt-4"><i class="far fa-envelope fa-2x"></i>Lascia un messaggio:</p>
+                        <p><span class="star">*</span> <span style="font-size:0.8em">Campi obbligatori</span></p>
 
-                            <form id="contact-form" action="contact.php" method="post" enctype="multipart/form-data">
-                                <div class=" form-row">
-                                    <div class="col-md-6 col-lg-4 mb-3">
-                                        <label for="name">Nome:</label><span class="star">*</span>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="il tuo nome" required>
-                                    </div>
+                        <form id="contact-form" action="contact.php" method="post" enctype="multipart/form-data">
+                            <div class=" form-row">
+                                <div class="col-md-6 col-lg-4 mb-3">
+                                    <label for="name">Nome:</label><span class="star">*</span>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="il tuo nome" required>
                                 </div>
+                            </div>
 
-                                <div class="form-row">
-                                    <div class="col-md-6 col-lg-4 mb-3">
-                                        <label for="email">E-mail:</label><span class="star">*</span>
-                                        <input type="email" class="form-control" placeholder="la tua e-mail" id="email" name="email" aria-describedby="email" required>
-                                    </div>
+                            <div class="form-row">
+                                <div class="col-md-6 col-lg-4 mb-3">
+                                    <label for="email">E-mail:</label><span class="star">*</span>
+                                    <input type="email" class="form-control" placeholder="la tua e-mail" id="email" name="email" aria-describedby="email" required>
                                 </div>
+                            </div>
 
-                                <div class="form-row">
-                                    <div class="col-md-8 mb-3">
-                                        <label for="subject">Oggetto:</label><span class="star">*</span>
-                                        <input type="text" class="form-control" placeholder="l'oggetto del messaggio" id="subject" name="subject">
-                                    </div>
+                            <div class="form-row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="subject">Oggetto:</label><span class="star">*</span>
+                                    <input type="text" class="form-control" placeholder="l'oggetto del messaggio" id="subject" name="subject">
                                 </div>
+                            </div>
 
-                                <div class="form-row">
-                                    <div class="col-md-8 mb-3">
-                                        <label for="msg">Messaggio:</label><span class="star">*</span>
-                                        <textarea class="form-control" id="msg" name="msg" rows="6" placeholder="scrivi qui il tuo messaggio" required></textarea>
-                                    </div>
+                            <div class="form-row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="msg">Messaggio:</label><span class="star">*</span>
+                                    <textarea class="form-control" id="msg" name="msg" rows="6" placeholder="scrivi qui il tuo messaggio" required></textarea>
                                 </div>
+                            </div>
 
-                                <p class="mb-1">Confermi di aver letto e di accettare le modalità di trattamento dei tuoi dati personali come descritto nella "<a href="https://www.iubenda.com/privacy-policy/11546089" class="iubenda-nostyle iubenda-embed iub-legal-only text-link">Privacy Policy</a>
-                                    <script type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>"?</p>
-                                <div class="form-row">
-                                    <input id="acceptance" type="checkbox" class="checkbox_square ml-1" name="agree" value="accetto" required>
-                                    <label class="form-check-label pl-2" for="acceptance">Confermo</label><span class="star">*</span>
+                            <p class="mb-1">Confermi di aver letto e di accettare le modalità di trattamento dei tuoi dati personali come descritto nella "<a href="https://www.iubenda.com/privacy-policy/11546089" class="iubenda-nostyle iubenda-embed iub-legal-only text-link">Privacy Policy</a>
+                                <script type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>"?</p>
+                            <div class="form-row">
+                                <input id="acceptance" type="checkbox" class="checkbox_square ml-1" name="agree" value="accetto" required>
+                                <label class="form-check-label pl-2" for="acceptance">Confermo</label><span class="star">*</span>
 
-                                </div>
+                            </div>
 
-                                <!-- filtro anti-spam - re-captcha v2 di google, uso la mia site-key -->
-                                <div class="g-recaptcha mt-4" data-sitekey="6LclxrMUAAAAAOIVAyoCwSesEhcLsXQbJ6H1QH_Q"></div>
-                                <br>
-                                <button id="contact-send-btn" class="btn btn-custom btn-larger mt-3 mr-5 pl-5 pr-0" type="submit">
-                                    <span id="contact-send-btn-txt">Invia</span><i id="contact-spinner" class="fas fa-spinner fa-spin fa-lg ml-1 hidden"></i><br>
-                                </button>
-                            </form>
+                            <!-- filtro anti-spam - re-captcha v2 di google, uso la mia site-key -->
+                            <div class="g-recaptcha mt-4" data-sitekey="6LclxrMUAAAAAOIVAyoCwSesEhcLsXQbJ6H1QH_Q"></div>
+                            <br>
+                            <button id="contact-send-btn" class="btn btn-custom btn-larger mt-3 mr-5 pl-5 pr-0" type="submit">
+                                <span id="contact-send-btn-txt">Invia</span><i id="contact-spinner" class="fas fa-spinner fa-spin fa-lg ml-1 hidden"></i><br>
+                            </button>
+                        </form>
 
-                            <p class=" mt-5 h5">oppure trovami su:</p>
-                            <a href="https://linkedin.com/in/renzocarara" target="_blank" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"><i class="fab fa-linkedin-in fa-2x contact-links"></i></a>
-                            <a href="https://github.com/renzocarara" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i class="fab fa-github fa-2x contact-links"></i></a>
+                        <p class=" mt-5 h5">oppure trovami su:</p>
+                        <a href="https://linkedin.com/in/renzocarara" target="_blank" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"><i class="fab fa-linkedin-in fa-2x contact-links"></i></a>
+                        <a href="https://github.com/renzocarara" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i class="fab fa-github fa-2x contact-links"></i></a>
 
-                        </div>
-                    </div> <!-- row -->
-                </div> <!-- container -->
+                    </div>
+                </div> <!-- row -->
             </div> <!-- container -->
 
         </section>
@@ -350,7 +347,7 @@
     <!-- template per la creazione delle slides all'interno dello slider -->
     <script id="template-slide" type="text/x-handlebars-template">
         {{!-- template per la creazione di un singola slide dello slider --}}
-        <div class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal"><img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}"></div>
+        <div  data-aos="fade-down" data-aos-duration="2000" class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal"><img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}"></div>
     </script>
 
     <!-- template per la creazione dei modal associati ad ogni singola slide -->

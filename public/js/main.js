@@ -27089,9 +27089,7 @@ $(document).ready(function () {
       url: 'db_read.php',
       method: 'get',
       success: function success(slidesData) {
-        console.log("success");
-        console.log("slidesData:", slidesData); // trasformo i dati da stringa JSON in un oggetto JS
-
+        // trasformo i dati da stringa JSON in un oggetto JS
         var slidesDataJSObj = JSON.parse(slidesData); // creo dinamicamente le slides dello slider (uso Handlebars.js)
 
         createSlides(slidesDataJSObj); // creo dinamicamente i modals associati alle slides dello slider (uso Handlebars.js)
@@ -27105,7 +27103,6 @@ $(document).ready(function () {
         hideTooltips();
       },
       error: function error(_error) {
-        console.log(_error);
         alert("ERRORE! non sono riuscito a recuperare i dati...");
       }
     }); // applico o rimuovo uno sfondo alla navbar in base allo scroll della pagina

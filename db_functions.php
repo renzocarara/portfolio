@@ -12,7 +12,7 @@ function connect_to_db()
 
 function run_query($query)
 {
-    // DESXRIZIONE:
+    // DESCRIZIONE:
     // mi connetto al DB e se tutto ok eseguo la query ricevuta in ingresso
 
     // Connect

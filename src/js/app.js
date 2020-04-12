@@ -43,11 +43,6 @@ $(document).ready(function () {
             method: 'get',
             success: function (slidesData) {
 
-                console.log("success");
-                console.log("slidesData:", slidesData);
-
-
-
                 // trasformo i dati da stringa JSON in un oggetto JS
                 var slidesDataJSObj = JSON.parse(slidesData);
                 // creo dinamicamente le slides dello slider (uso Handlebars.js)
@@ -62,7 +57,6 @@ $(document).ready(function () {
                 hideTooltips();
             },
             error: function (error) {
-                console.log(error);
 
                 alert("ERRORE! non sono riuscito a recuperare i dati...");
             }
