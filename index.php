@@ -238,8 +238,8 @@
 
                             <!-- frecce avanti/indietro dello slider -->
                             <div class="slider-buttons d-flex justify-content-center" >
-                                <i data-aos="fade-right" data-aos-duration="1000" class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2" data-toggle="tooltip" data-placement="bottom" title="Precedente"></i>
-                                <i data-aos="fade-left" data-aos-duration="1000" class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow" data-toggle="tooltip" data-placement="bottom" title="Successiva"></i>
+                                <i data-aos="fade-right" data-aos-duration="1500" class="fas fa-arrow-alt-circle-left fa-3x p-2 slider-arrow mr-2" data-toggle="tooltip" data-placement="bottom" title="Precedente"></i>
+                                <i data-aos="fade-left" data-aos-duration="1500" class="fas fa-arrow-alt-circle-right fa-3x p-2 slider-arrow" data-toggle="tooltip" data-placement="bottom" title="Successiva"></i>
                             </div>
                         </div>
                     </div>
@@ -347,7 +347,8 @@
     <!-- template per la creazione delle slides all'interno dello slider -->
     <script id="template-slide" type="text/x-handlebars-template">
         {{!-- template per la creazione di un singola slide dello slider --}}
-        <div  data-aos="fade-down" data-aos-duration="2000" class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal"><img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}"></div>
+        <!-- data-aos="fade-down" data-aos-duration="2000" -->
+        <div class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal"><img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}"></div>
     </script>
 
     <!-- template per la creazione dei modal associati ad ogni singola slide -->
