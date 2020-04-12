@@ -61,6 +61,16 @@ h6 {
   }
 }
 
+.my-scrollbar {
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  padding-right: 25px;
+  padding-left: 0;
+
+}
+
 // siccome ho un header fixed, sullo scroll dopo il click su di un link
 // interno il posizionamento sballerebbe di un altezza pari all'header
 // fisso un offset pari almeno all'altezza dell'header

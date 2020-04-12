@@ -16680,6 +16680,15 @@ h6 {
   color: #69e7f8;
 }
 
+.my-scrollbar {
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  padding-right: 25px;
+  padding-left: 0;
+}
+
 .anchor-offset {
   display: block;
   position: relative;
@@ -17021,5 +17030,22 @@ footer a:hover {
   .card-body {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+@media (hover: none) {
+  .scroll-to-top:hover {
+    color: rgba(23, 163, 184, 0.33);
+  }
+
+  .section3 .slider-arrow:hover {
+    color: #17A2B8;
+  }
+
+  .section4 .contact-links:hover {
+    color: #17A2B8;
+  }
+
+  .tns-nav > [aria-controls]:hover {
+    background-color: #17A2B8;
   }
 }
