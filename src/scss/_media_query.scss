@@ -57,7 +57,12 @@
 
     // dots dello slider nella sezione portfolio
     .tns-nav>[aria-controls]:hover {
-
         background-color: $primary-color;
     }
+
+    // bordo delle slide
+    .slide-border:hover {
+        border-color: $primary-color;
+    }
+
 }

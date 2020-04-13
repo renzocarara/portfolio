@@ -38,6 +38,14 @@
               }
        }
 
+       .slide-border {
+              border: 3px solid $primary-color;
+              border-radius: 5px;
+
+              &:hover {
+                     border-color: $light-color;
+              }
+       }
 }
 
 

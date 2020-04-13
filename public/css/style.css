@@ -16674,6 +16674,7 @@ h6 {
 
 .text-link {
   color: #06dcfd;
+  text-shadow: none;
 }
 .text-link:hover {
   text-decoration: none;
@@ -16941,6 +16942,13 @@ h6 {
 .section3 .slider-arrow:hover {
   color: #06dcfd;
 }
+.section3 .slide-border {
+  border: 3px solid #17A2B8;
+  border-radius: 5px;
+}
+.section3 .slide-border:hover {
+  border-color: #06dcfd;
+}
 
 /* end section1 style */
 /* section4 style */
@@ -17059,5 +17067,9 @@ footer a:hover {
 
   .tns-nav > [aria-controls]:hover {
     background-color: #17A2B8;
+  }
+
+  .slide-border:hover {
+    border-color: #17A2B8;
   }
 }

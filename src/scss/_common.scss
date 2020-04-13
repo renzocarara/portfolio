@@ -54,6 +54,7 @@ h6 {
 // stile generico per i link del documento
 .text-link {
   color: $light-color;
+  text-shadow: none;
 
   &:hover {
     text-decoration: none;
