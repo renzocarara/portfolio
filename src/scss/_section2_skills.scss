@@ -1,4 +1,21 @@
 /* section2 style */
+
+.section2 {
+    background-image: url("../assets/images/sect2_bcg.jpeg");
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // color: #fff;
+    background-color: $white-color;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    background-attachment: fixed;
+    // padding-bottom: 0;
+}
+
+
+
 #tech-skills {
 
     // bordo della tab attiva

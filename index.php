@@ -85,10 +85,10 @@
             <div class="container">
                 <div class="overlay"></div>
                 <div class="clearfix animated bounceInRight delay-2s">
-                    <img class="img-fluid float-right title" src="public/assets/images/nome_cognome_bordo_nero_e_bianco.png" alt="renzo carara nome" />
+                    <img class="img-fluid float-right title" src="public/assets/images/nome_cognome.png" alt="renzo carara nome" />
                 </div>
                 <div class="clearfix animated lightSpeedIn delay-1s">
-                    <img class="img-fluid float-left avatar animated lightSpeedIn delay-1s" src="public/assets/images/rc_avatar-biggersize.png" alt="renzo carara avatar" />
+                    <img class="img-fluid float-left avatar animated lightSpeedIn delay-1s" src="public/assets/images/rc_avatar.png" alt="renzo carara avatar" />
                     <h1 class="subtitle float-right"><strong>junior web developer</strong></h1>
                 </div>
             </div>
@@ -109,13 +109,13 @@
                                 Per ripartire da zero, ad ottobre 2019, inizio un corso intensivo della durata di 6 mesi (presso <a class="text-link" href="https://www.boolean.careers/" target="_blank">Boolean Careers</a>),
                                 per diventare un junior Full Stack Web Developer.<br>
                                 A inizio Aprile 2020, completata con profitto la mia formazione, inizio a valutare le nuove opportunità di lavoro.<br>
-                                <img id="my_signature" src="public/assets/images/firma_blu_trasp.png" alt="la mia firma">
+                                <img id="my_signature" src="public/assets/images/firma.png" alt="la mia firma">
                             </p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 card">
                         <div class="card-body">
-                            <div class="text-center mt-1"><img id="my_face" class="image-fluid" src="public/assets/images/rc_rotondo.png" alt="Renzo Carara image"></div>
+                            <div class="text-center mt-1"><img id="my_face" class="image-fluid" src="public/assets/images/rc_foto.png" alt="Renzo Carara image"></div>
                             <div class="text-center"><a class="btn btn-custom" href="public/assets/cv_rc_secured.pdf" target="_blank" download="CV_RenzoCarara">Download CV (.pdf)</a></div>
 
                             <p class="card-text mt-2 mb-1">Scarica il mio curriculum vitae completo, in formato stampabile</p>
