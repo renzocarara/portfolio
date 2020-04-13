@@ -41,11 +41,11 @@
     <script src="https://www.google.com/recaptcha/api.js?hl=it" async defer></script>
 
     <!-- cookie-law consent banner by Iubenda -->
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         var _iub = _iub || [];
         _iub.csConfiguration = { "lang": "it", "siteId": 1655500, "cookiePolicyId": 11546089, "banner": { "acceptButtonDisplay": true, "customizeButtonDisplay": true, "acceptButtonColor": "#000000", "acceptButtonCaptionColor": "white", "customizeButtonColor": "#212121", "customizeButtonCaptionColor": "white", "rejectButtonDisplay": true, "rejectButtonColor": "#000000", "rejectButtonCaptionColor": "white", "position": "bottom", "textColor": "#000000", "backgroundColor": "#ffff00" } };
     </script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script> -->
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 
 <body data-spy="scroll" data-target="#navbar-menu">
@@ -347,7 +347,6 @@
     <!-- template per la creazione delle slides all'interno dello slider -->
     <script id="template-slide" type="text/x-handlebars-template">
         {{!-- template per la creazione di un singola slide dello slider --}}
-        <!-- data-aos="fade-down" data-aos-duration="2000" -->
         <div class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal"><img class="img-fluid" src="public/assets/images/slider/{{ img_filename }}" alt="{{ alt_img_desc }}"></div>
     </script>
 
