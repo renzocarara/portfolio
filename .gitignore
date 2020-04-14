@@ -4,4 +4,4 @@ package-lock.json
 mix-manifest.json
 TEMP/
 .htaccess
-db-config-php
+db_config.php
