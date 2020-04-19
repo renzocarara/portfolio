@@ -5,3 +5,4 @@ mix-manifest.json
 TEMP/
 .htaccess
 db_config.php
+SendGridAPIkey.txt

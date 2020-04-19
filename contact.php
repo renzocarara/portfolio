@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+// SendGrid
+require("./sendgrid-php/sendgrid-php.php");
+
+
 // faccio qualcosa solo se è stato effettivamente premuto il bottone di invio
 // if(isset($_POST['submit']) && !empty($_POST['submit'])){
 
@@ -10,23 +14,21 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
     $secret = '6LclxrMUAAAAAHes-fC6pgtNJab5O_lYNSa9fHrR'; // la mia chiave per il recaptcha (secret key)
     // tramite la mia chiave segreta, faccio la verifica re-captcha
     $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $_POST['g-recaptcha-response'] . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-    
+
     $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=__CHIAVE_SEGRETA__&response='.$_POST['g-recaptcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']);
 
-    
-    
         $responseData = json_decode($verifyResponse);
 
         // verifico se la chiamata a google per il recaptcha a dato esito OK
         if($responseData->success){
-            
+
             // controllo che tutti i campi del form siano fillati
             if(isset($_POST) && !empty($_POST['name'])
-                                && !empty($_POST['email']) 
-                                && !empty($_POST['subject']) 
-                                && !empty($_POST['msg']) 
+                                && !empty($_POST['email'])
+                                && !empty($_POST['subject'])
+                                && !empty($_POST['msg'])
                                 && !empty($_POST['agree'])) {
-                                    
+
                 $user_name = $_POST['name'];
                 $user_email = $_POST['email'];
                 $user_subject = $_POST['subject'];
@@ -40,25 +42,40 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 Messaggio: $user_text
                 Trattamento dati: $user_agree");
 
-                // invio l'email al gestore del sito (io!)
+                // invio una email al gestore del sito (io!), preparo le variabili
                 $to = "renzo.carara@libero.it";
                 $subject = "Messaggio dal sito renzocarara.it";
-                $headers = "From: $user_email";
-                $mail_to_admin_result = mail($to, $subject, $txt, $headers);                            
-                $status = $mail_to_admin_result ? 'sent=true' : 'sent=false';
-                // echo '<script>alert("Messaggio inviato correttamente");window.history.go(-1)</script>';
 
-                sleep(3); // dò fiato al server php mail()
+                // ////////////////////////////////////////// SENDGRID ///////////////////////////////////////////////////////
+                $email = new \SendGrid\Mail\Mail();
+                $email->setFrom("info@renzocarara.it", "renzocarara.it");     // indirizzo mittente
+                $email->setSubject($subject);                                 // oggetto email
+                $email->addTo($to);                                           // indirizzo destinatario
+                $email->addContent("text/plain", $txt);                       // testo della email
+                $sendgrid = new \SendGrid('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');    // SendGrid api key
+                try {
+                    $response = $sendgrid->send($email);
+                    print $response->statusCode() . "\n";
+                    print_r($response->headers());
+                    print $response->body() . "\n";
+                } catch (Exception $e) {
+                    echo 'Caught exception: '. $e->getMessage() ."\n";
+                }
 
-                // // invio l'email di conferma all'utente che ha lasciato un messaggio
-                $to = $user_email;
-                $subject = "Conferma ricezione messaggio";
-                $headers = "From: info@renzocarara.it";
-                $txt =  utf8_decode("Buongiorno,
+                $status = $response->statusCode() == 202 ? 'sent=true' : 'sent=false';
+                // ////////////////////////////////////////// SENDGRID ///////////////////////////////////////////////////////
+
+                if ($status== 'sent=true') { // l'invio della mail all'amministratore è andato bene
+                // invio l'email di conferma all'utente che ha lasciato il messaggio
+                    $to = $user_email;
+                    $subject = "Conferma ricezione messaggio";
+
+                    $txt =  utf8_decode("Buongiorno,
 
 Le confermo la ricezione del Suo messaggio.
 La ricontatterò il prima possibile.
 Grazie.
+Renzo Carara
 
 Di seguito i dettagli del Suo messaggio:
 
@@ -69,8 +86,46 @@ Di seguito i dettagli del Suo messaggio:
 
 ATTENZIONE: non risponda a questo messaggio: è stato generato automaticamente e inviato da un indirizzo mail non abilitato a ricevere posta.");
 
-                
-                $mail_to_user_result = mail($to, $subject, $txt, $headers);  
+
+
+$txt_html = "<p>Buongiorno,</p>
+
+<p>Le confermo la ricezione del Suo messaggio. <br>
+    La ricontatterò il prima possibile. <br>
+    Grazie. <br>
+    Renzo Carara</p>
+
+<p>Di seguito i dettagli del Suo messaggio:</p>
+
+<ul>
+    <li>Nome:  $user_name</li>
+    <li>Email: $user_email</li>
+    <li>Oggetto: $user_subject</li>
+    <li>Messaggio: $user_text</li>
+</ul>
+
+<small>ATTENZIONE: non risponda a questo messaggio: è stato generato automaticamente e inviato da un indirizzo mail non abilitato a ricevere posta.</small>";
+
+                    // ////////////////////////////////////////// SENDGRID ///////////////////////////////////////////////////////
+                    $email = new \SendGrid\Mail\Mail();
+                    $email->setFrom("info@renzocarara.it", "Renzo Carara");       // indirizzo mittente
+                    $email->setSubject($subject);                                 // oggetto email
+                    $email->addTo($to);                                           // indirizzo destinatario
+                    $email->addContent("text/plain", $txt);                       // testo plain della email
+                    $email->addContent("text/html", $txt_html);                   // testo HTML della mail
+                    $sendgrid = new \SendGrid('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');    // SendGrid api key
+                    try {
+                        $response = $sendgrid->send($email);
+                        print $response->statusCode() . "\n";
+                        print_r($response->headers());
+                        print $response->body() . "\n";
+                    } catch (Exception $e) {
+                        echo 'Caught exception: '. $e->getMessage() ."\n";
+                    }
+
+                    $status = $response->statusCode() == 202 ? 'sent=true' : 'sent=false';
+                    // ////////////////////////////////////////// SENDGRID ///////////////////////////////////////////////////////
+                }
             }
             else
             {
@@ -81,14 +136,14 @@ ATTENZIONE: non risponda a questo messaggio: è stato generato automaticamente e
         else {   // captcha not successful
             $status = 'sent=antispam';
             // echo '<script>alert("ATTENZIONE: verifica antispam fallita! Pregasi riprovare.");window.history.go(-1)</script>';
-        }  
-}           
-else{ // captcha non flaggato 
-    $status = 'sent=captcha_nok';  
+        }
+}
+else{ // captcha non flaggato
+    $status = 'sent=captcha_nok';
     // echo '<script>alert("ATTENZIONE: Captcha non spuntato!");window.history.go(-1)</script>';
 }
 
- header('Location: contact_result.php?' . $status);
+header('Location: contact_result.php?' . $status);
 
 //}
 
