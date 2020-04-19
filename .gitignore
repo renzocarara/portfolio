@@ -6,3 +6,4 @@ TEMP/
 .htaccess
 db_config.php
 SendGridAPIkey.txt
+send_grid_api_key.php

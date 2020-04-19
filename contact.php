@@ -3,6 +3,7 @@ session_start();
 
 // SendGrid
 require("./sendgrid-php/sendgrid-php.php");
+include('send_grid_api_key.php');
 
 
 // faccio qualcosa solo se è stato effettivamente premuto il bottone di invio
@@ -52,7 +53,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 $email->setSubject($subject);                                 // oggetto email
                 $email->addTo($to);                                           // indirizzo destinatario
                 $email->addContent("text/plain", $txt);                       // testo della email
-                $sendgrid = new \SendGrid('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');    // SendGrid api key
+                $sendgrid = new \SendGrid($send_grid_api_key);                // SendGrid api key
                 try {
                     $response = $sendgrid->send($email);
                     print $response->statusCode() . "\n";
@@ -113,7 +114,7 @@ $txt_html = "<p>Buongiorno,</p>
                     $email->addTo($to);                                           // indirizzo destinatario
                     $email->addContent("text/plain", $txt);                       // testo plain della email
                     $email->addContent("text/html", $txt_html);                   // testo HTML della mail
-                    $sendgrid = new \SendGrid('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');    // SendGrid api key
+                    $sendgrid = new \SendGrid($send_grid_api_key);                // SendGrid api key
                     try {
                         $response = $sendgrid->send($email);
                         print $response->statusCode() . "\n";
