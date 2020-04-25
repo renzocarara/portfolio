@@ -38,6 +38,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 $user_agree = $_POST['agree'];
 
                 $txt = utf8_decode("Hai ricevuto una richiesta dal tuo modulo di contatto.
+
                 Nome: $user_name
                 Email: $user_email
                 Oggetto: $user_subject
@@ -91,6 +92,8 @@ Di seguito i dettagli del Suo messaggio:
 ATTENZIONE: non risponda a questo messaggio: è stato generato automaticamente e inviato da un indirizzo mail non abilitato a ricevere posta.");
 
 // versione HTML del messaggio
+// NOTA: anzichè questo codice HTML uso un template HTML costruito sul server Sendgrid
+// ed al quale accedo tramite un ID che identifica quello specifico template
 $txt_html = "<p>Buongiorno,</p>
 
 <p>Le confermo la ricezione del Suo messaggio. <br>
@@ -116,6 +119,10 @@ $txt_html = "<p>Buongiorno,</p>
                     $email->addTo($to);                                           // indirizzo destinatario
                     $email->addContent("text/plain", $txt);                       // testo plain della email
                     $email->addContent("text/html", $txt_html);                   // testo HTML della mail
+   
+                    // uso il template che ho costruito sul sito di Sendgrid e che identifico tramite ID
+                    $email->setTemplateId("d-87bf32e64bce48959c5f4d96d1ce74a4");
+   
                     $sendgrid = new \SendGrid($send_grid_api_key);                // SendGrid api key
                     try {
                         $response = $sendgrid->send($email);
