@@ -23,6 +23,10 @@ function run_query($query)
         return null;
     } else {
         // echo "Connection established";
+
+        // Change character set to utf8 (per problema su lettere accentate..)
+        $conn -> set_charset("utf8");
+
         $result = $conn->query($query);
         $conn->close();
         return $result;

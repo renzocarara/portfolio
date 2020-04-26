@@ -1,7 +1,7 @@
 <?php
 // ---------------------------------------------------------------------------------------
 
-// include delle funzioni per connettersi e leggere dal DB
+// include delle funzioni per connettersi al DB ed eseguire query
 include 'db_functions.php';
 
 // preparo una query per leggere tutta la tabella "rc_website_slides"

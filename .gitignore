@@ -4,6 +4,7 @@ package-lock.json
 mix-manifest.json
 TEMP/
 .htaccess
+# contiene i dati per l'accesso al DB di Altervista
 db_config.php
-SendGridAPIkey.txt
+# contiene la API key per accedere al servizio di mailing di SendGrid
 send_grid_api_key.php

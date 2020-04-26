@@ -1,4 +1,7 @@
 <?php
+// include delle funzioni per connettersi al DB ed eseguire query
+include 'db_functions.php';
+
 session_start();
 
 // SendGrid
@@ -34,16 +37,16 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 $user_name = $_POST['name'];
                 $user_email = $_POST['email'];
                 $user_subject = $_POST['subject'];
-                $user_text = ($_POST['msg']);
+                $user_text = $_POST['msg'];
                 $user_agree = $_POST['agree'];
 
-                $txt = utf8_decode("Hai ricevuto una richiesta dal tuo modulo di contatto.
+                $txt = "Hai ricevuto una richiesta dal tuo modulo di contatto.
 
                 Nome: $user_name
                 Email: $user_email
                 Oggetto: $user_subject
                 Messaggio: $user_text
-                Trattamento dati: $user_agree");
+                Trattamento dati: $user_agree";
 
                 $to = "renzo.carara@libero.it";
                 $subject = "Messaggio dal sito renzocarara.it";
@@ -62,20 +65,32 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                     // print_r($response->headers());
                     // print $response->body() . "\n";
                 } catch (Exception $e) {
-                    $status = 'sent=false';
-                    header('Location: contact_result.php?' . $status);
-                    // echo 'Caught exception: '. $e->getMessage() ."\n";
+                    echo 'Caught exception: '. $e->getMessage() ."\n";
                 }
 
                 $status = $response->statusCode() == 202 ? 'sent=true' : 'sent=false';
                 // ////////////////////////////////////////// SENDGRID ///////////////////////////////////////////////////////
+
+                // scrivo nel DB il messaggio dell'utente
+                // preparo una query per scrivere nella tabella "rc_website_msgs"
+                $sql = "INSERT INTO rc_website_msgs (nome, email, oggetto, messaggio, quando, esito) VALUES ('$user_name', '$user_email', '$user_subject', '$user_text', NOW(), '$status')";
+          
+                 // eseguo la query
+                $result = run_query($sql);
+
+                if ($result) {
+                    echo "scrittura nel DB riuscita";
+                    }
+                else{
+                    echo "scrittura nel DB non riuscita";
+                }
 
                 if ($status == 'sent=true') { // l'invio della mail all'amministratore è andato bene
                     // invio l'email di conferma all'utente che ha lasciato il messaggio
                     $to = $user_email;
                     $subject = "Conferma ricezione messaggio";
                     // preparo anche la versione "plain/text" nel caso il gestore di posta dell'utente non interpreti la versione HTML
-                    $txt =  utf8_decode("Buongiorno,
+                    $txt = "Buongiorno,
 
 Le confermo la ricezione del Suo messaggio.
 La ricontatterò il prima possibile.
@@ -89,7 +104,7 @@ Di seguito i dettagli del Suo messaggio:
     Oggetto: $user_subject
     Messaggio: $user_text
 
-ATTENZIONE: non risponda a questo messaggio: è stato generato automaticamente e inviato da un indirizzo mail non abilitato a ricevere posta.");
+ATTENZIONE: non risponda a questo messaggio: è stato generato automaticamente e inviato da un indirizzo mail non abilitato a ricevere posta.";
 
 // versione HTML del messaggio
 // NOTA: anzichè questo codice HTML uso un template HTML costruito sul server Sendgrid
@@ -151,7 +166,7 @@ else{ // captcha non flaggato
     // echo '<script>alert("ATTENZIONE: Captcha non spuntato!");window.history.go(-1)</script>';
 }
 
-header('Location: contact_result.php?' . $status);
+   header('Location: contact_result.php?' . $status);
 
 //}
 

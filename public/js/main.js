@@ -27058,7 +27058,7 @@ __webpack_require__(/*! ../../node_modules/bootstrap/dist/js/bootstrap.bundle.mi
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip({
-    trigger: 'hover'
+    trigger: "hover"
   });
 }); //
 // abilito Boostrap Popover
@@ -27082,12 +27082,12 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 //
 
 $(document).ready(function () {
-  if ($('#home').length > 0) {
-    // verifico se sono sulla pagina inizialeindex.html
+  if ($("#home").length > 0) {
+    // verifico se sono sulla pagina iniziale index.html
     // chiamata AJAX per recuperare dati dal DB
     $.ajax({
-      url: 'db_read.php',
-      method: 'get',
+      url: "db_read.php",
+      method: "get",
       success: function success(slidesData) {
         // trasformo i dati da stringa JSON in un oggetto JS
         var slidesDataJSObj = JSON.parse(slidesData); // creo dinamicamente le slides dello slider (uso Handlebars.js)
@@ -27126,26 +27126,25 @@ function createSlides(slidesDataJSObj) {
   // DESCRIZIONE:
   // creo dinamicamente gli elementi che compongono lo slider, sono dei <div> con all'interno un'immagine
   // utilizzo un template di handlebars. I dati con cui valorizzare il template li leggo da una struttura dati
-  // definita all'inizio di questo file js (slidesDataJSObj). E' array di oggetti dove ogni oggetto contiene i dati della slide
-  // incluse le informazioni che veranno poi visualizzate (tramite un modal) s e l'utente clicca sulla slide stessa
+  // che ricevo in ingresso (slidesDataJSObj). E' array di array dove ogni elemento contiene i dati della slide.
   // ciclo lo slidesDataJSObj e scorro tutti gli elementi (ogni elemento è una slide)
   for (var i = 0; i < slidesDataJSObj.length; i++) {
     // creo un oggetto con i dati che mi servono
     var slideInfo = {
-      'name': slidesDataJSObj[i].name,
-      'title': slidesDataJSObj[i].title,
-      'img_filename': slidesDataJSObj[i].img_filename,
-      'alt_img_desc': slidesDataJSObj[i].alt_img_desc
+      name: slidesDataJSObj[i].name,
+      title: slidesDataJSObj[i].title,
+      img_filename: slidesDataJSObj[i].img_filename,
+      alt_img_desc: slidesDataJSObj[i].alt_img_desc
     }; // leggo il codice html dal template HANDLEBARS
 
-    var slideTemplate = $('#template-slide').html(); // do in pasto a HANDLEBARS il codice html, lui mi restituisce una funzione
+    var slideTemplate = $("#template-slide").html(); // do in pasto a HANDLEBARS il codice html, lui mi restituisce una funzione
 
     var slideFunction = Handlebars.compile(slideTemplate); // uso la funzione generata da HANDLEBARS, valorizzo l'html, ovvero i vari placeholder vengono sostituiti con il contenuto
     // della variabile che passo alla funzione, passo un oggetto, che contiene tutte le info della slide che sto creando
 
     var slide = slideFunction(slideInfo); // inserisco la slide sulla pagina con il codice HTML che ho appena generato dal template HANDLEBARS
 
-    $('.my-slider').append(slide);
+    $(".my-slider").append(slide);
   } // fine ciclo scansione dell'array slidesDataJSObj
 
 }
@@ -27153,31 +27152,31 @@ function createSlides(slidesDataJSObj) {
 function createSlideModals(slidesDataJSObj) {
   // DESCRIZIONE:
   // creo dinamicamente i modals associati ad ogni singola slide, utilizzo un template di handlebars.
-  // I dati con cui valorizzare il template li leggo da una struttura dati
-  // definita all'inizio di questo file js (slidesDataJSObj). E' array di oggetti dove ogni oggetto contiene i dati della slide
-  // NOTA la chiave 'site-link' può essere vuota, in questo caso NON devo "appendere" codice sulla pagina HTML
+  //  I dati con cui valorizzare il template li leggo da una struttura dati
+  // che ricevo in ingresso (slidesDataJSObj). E' array di array dove ogni elemento contiene i dati della slide
+  // NOTA la chiave 'site-link' può valere "not_available", in questo caso NON devo "appendere" codice sulla pagina HTML
   // ciclo lo slidesDataJSObj e scorro tutti gli elementi (ogni elemento è una slide)
   for (var i = 0; i < slidesDataJSObj.length; i++) {
     // creo un oggetto con i dati che mi servono, leggondoli dall'array slidesDataJSObj
     var slideModalInfo = {
-      'name': slidesDataJSObj[i].name,
-      'img_filename': slidesDataJSObj[i].img_filename,
-      'alt_img_desc': slidesDataJSObj[i].alt_img_desc,
-      'title': slidesDataJSObj[i].title,
-      'description': slidesDataJSObj[i].description,
-      'technologies': slidesDataJSObj[i].technologies,
-      'code_link': slidesDataJSObj[i].code_link,
-      'site_link': slidesDataJSObj[i].site_link == "not_available" ? "" : '<a href="' + slidesDataJSObj[i].site_link + '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>'
+      name: slidesDataJSObj[i].name,
+      img_filename: slidesDataJSObj[i].img_filename,
+      alt_img_desc: slidesDataJSObj[i].alt_img_desc,
+      title: slidesDataJSObj[i].title,
+      description: slidesDataJSObj[i].description,
+      technologies: slidesDataJSObj[i].technologies,
+      code_link: slidesDataJSObj[i].code_link,
+      site_link: slidesDataJSObj[i].site_link == "not_available" ? "" : '<a href="' + slidesDataJSObj[i].site_link + '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>'
     }; // leggo il codice html dal template HANDLEBARS
 
-    var modalTemplate = $('#template-slide-modal').html(); // do in pasto a HANDLEBARS il codice html, lui mi restituisce una funzione
+    var modalTemplate = $("#template-slide-modal").html(); // do in pasto a HANDLEBARS il codice html, lui mi restituisce una funzione
 
     var slideModalFunction = Handlebars.compile(modalTemplate); // uso la funzione generata da HANDLEBARS, valorizzo l'html, ovvero i vari placeholder vengono sostituiti con il contenuto
     // della variabile che passo alla funzione, passo un oggetto, che contiene tutte le info della slide che sto creando
 
     var slideModal = slideModalFunction(slideModalInfo); // inserisco la slide sulla pagina con il codice HTML che ho appena generato dal template HANDLEBARS
 
-    $('#slide-modals').append(slideModal);
+    $("#slide-modals").append(slideModal);
   } // fine ciclo scansione dell'array slidesDataJSObj
 
 }
@@ -27185,8 +27184,8 @@ function createSlideModals(slidesDataJSObj) {
 function enableTooltipsOnDynamic() {
   // DESCRIZIONE:
   // abilito i tooltips solo dopo che tutti i modal, e in precedenza le slide, sono stati creati nel DOM
-  $('.tooltip-on-dynamic-el').tooltip({
-    trigger: 'hover' // evito che il tooltip rimanga visualizzato dopo un click
+  $(".tooltip-on-dynamic-el").tooltip({
+    trigger: "hover" // evito che il tooltip rimanga visualizzato dopo un click
 
   });
 }
@@ -27202,15 +27201,15 @@ function handleNavbarOnScroll() {
 
     if (positionFromTop > 15) {
       // NOTA: bg-info è una classe (colore) di Bootstrap
-      navbar.addClass('bg-info navbar-shadow'); // rendo visibile anche il site name "renzocarara.it"
+      navbar.addClass("bg-info navbar-shadow"); // rendo visibile anche il site name "renzocarara.it"
 
-      $('#site-name').addClass('d-inline-block').removeClass('d-none');
-    } else if ($(".navbar-toggler").hasClass('collapsed')) {
+      $("#site-name").addClass("d-inline-block").removeClass("d-none");
+    } else if ($(".navbar-toggler").hasClass("collapsed")) {
       // il menu hamburger non è aperto, cioè non ha classe collapsed e l'utente
       // ha scrollato quasi fino in cima. allora rimuovo il colore di sfondo
-      navbar.removeClass('bg-info navbar-shadow'); // rimuovo anche il site name "renzocarara.it"
+      navbar.removeClass("bg-info navbar-shadow"); // rimuovo anche il site name "renzocarara.it"
 
-      $('#site-name').removeClass('d-inline-block').addClass('d-none');
+      $("#site-name").removeClass("d-inline-block").addClass("d-none");
     }
   });
 }
@@ -27221,8 +27220,8 @@ function closeHamburgerMenu() {
   // intercetto click sulle voci del menu della navbar e sul BTT button
   // DA VERIFICARE SINTASSI....
   // $('.nav-item:not(.dropdown), .dropdown-item, .scroll-to-top').on('click', function () {
-  $('.nav-item, .scroll-to-top').click(function () {
-    $('#navbar-menu').collapse('hide');
+  $(".nav-item, .scroll-to-top").click(function () {
+    $("#navbar-menu").collapse("hide");
   });
 }
 
@@ -27230,10 +27229,10 @@ function handleClickOnHamburgerMenu() {
   // DESCRIZIONE:
   // al click sull'icona hamburger setto il background color della navigation bar
   // intercetto click sull'icona hamburger
-  $('.navbar-toggler').click(function () {
-    if (!$('.navbar').hasClass('bg-info')) {
+  $(".navbar-toggler").click(function () {
+    if (!$(".navbar").hasClass("bg-info")) {
       // se non ce l'ha già, applico lo sfondo solido alla navbar
-      $('.navbar').addClass('bg-info navbar-shadow');
+      $(".navbar").addClass("bg-info navbar-shadow");
     }
   });
 }
@@ -27242,7 +27241,7 @@ function internalLinkSmoothScroll() {
   // DESCRIZIONE:
   // versione w3schools, applico uno smooth scroll quando viene cliccato un link interno alla pagina
   // Add smooth scrolling to internal links with class smooth-link
-  $("a.smooth-link").on('click', function (event) {
+  $("a.smooth-link").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
@@ -27252,7 +27251,7 @@ function internalLinkSmoothScroll() {
       // The optional number (800) specifies the number
       // of milliseconds it takes to scroll to the specified area
 
-      $('html, body').animate({
+      $("html, body").animate({
         scrollTop: $(hash).offset().top
       }, 800, function () {
         // Add hash (#) to URL when done scrolling (default click behavior)
@@ -27290,8 +27289,8 @@ function showContactSpinner() {
     // se tutto ok fare un $("#contact-form").submit
     // altrimenti buttar fuori un errore a video
     // se il form è stato "submittato" allora visualizzo lo spinner e cambio la dicitua del bottone
-    $('#contact-send-btn-txt').text("Attendi...");
-    $('#contact-spinner').removeClass("hidden").addClass("visible");
+    $("#contact-send-btn-txt").text("Attendi...");
+    $("#contact-spinner").removeClass("hidden").addClass("visible");
   });
 }
 
@@ -27299,26 +27298,26 @@ function createSlider() {
   // DESCRIZIONE:
   // creo lo slider con la libreria tiny slider 2
   var slider = Object(_node_modules_tiny_slider_src_tiny_slider_js__WEBPACK_IMPORTED_MODULE_0__["tns"])({
-    "container": ".my-slider",
-    "items": 1,
-    "gutter": 20,
-    "controlsPosition": "bottom",
-    "controlsContainer": ".slider-buttons",
-    "navPosition": "bottom",
-    "navAsThumbnails": true,
+    container: ".my-slider",
+    items: 1,
+    gutter: 20,
+    controlsPosition: "bottom",
+    controlsContainer: ".slider-buttons",
+    navPosition: "bottom",
+    navAsThumbnails: true,
     // 1 dot per ogni slide
-    "preventActionWhenRunning": true,
+    preventActionWhenRunning: true,
     // breakpoint che scatta da n px in su
-    "responsive": {
+    responsive: {
       "768": {
-        "items": 2
+        items: 2
       },
       "1200": {
-        "items": 3
+        items: 3
       }
     },
-    "speed": 400,
-    "mouseDrag": true
+    speed: 400,
+    mouseDrag: true
   });
 }
 
@@ -27328,10 +27327,10 @@ function hideTooltips() {
   // NOTA: su gli elementi creati dinamicamente (i.e. le slide dello slider e i modals)
   // i tooltip non sono associati con l'attributo data-toggle, ma con una classe (tooltip-on-dynamic-el)
   $('[data-toggle="tooltip"]').click(function () {
-    $('[data-toggle="tooltip"]').tooltip('hide');
+    $('[data-toggle="tooltip"]').tooltip("hide");
   });
   $(".tooltip-on-dynamic-el").click(function () {
-    $(".tooltip-on-dynamic-el").tooltip('hide');
+    $(".tooltip-on-dynamic-el").tooltip("hide");
   });
 }
 
