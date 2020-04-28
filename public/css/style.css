@@ -16890,31 +16890,31 @@ h6 {
   background-attachment: fixed;
 }
 
-#tech-skills .nav-tabs .nav-link.active,
-#tech-skills .nav-tabs .nav-item.show .nav-link {
+#hard-skills .nav-tabs .nav-link.active,
+#hard-skills .nav-tabs .nav-item.show .nav-link {
   color: #06dcfd;
   background-color: #fff;
   background-color: #F8F9FA;
   border-color: #026979 #026979 #fff;
 }
-#tech-skills .nav-tabs .nav-link {
+#hard-skills .nav-tabs .nav-link {
   border: 1px solid transparent;
 }
-#tech-skills .nav-tabs {
+#hard-skills .nav-tabs {
   border-bottom: 1px solid #026979;
 }
-#tech-skills a {
+#hard-skills a {
   color: #026979;
 }
-#tech-skills .tab-pane {
+#hard-skills .tab-pane {
   min-height: 282px;
 }
-#tech-skills i {
+#hard-skills i {
   vertical-align: sub;
   color: #17A2B8;
   margin-top: 5px;
 }
-#tech-skills .tab-tecnologie img {
+#hard-skills .tab-tech img {
   vertical-align: sub;
   height: 30px;
   max-width: 40px;
