@@ -1,25 +1,23 @@
 /* commom style */
 
 body {
-
-  font-family: #{$ff-text};
-  position: relative;
+    font-family: #{$ff-text};
+    position: relative;
 }
 
 textarea:focus,
 input:focus,
 button:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
 section {
-  padding: 76px 10px;
+    padding: 76px 10px;
 
-  h2 {
-    font-weight: bold;
-  }
-
+    h2 {
+        font-weight: bold;
+    }
 }
 
 h1,
@@ -28,48 +26,68 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: #{$ff-headings};
+    font-family: #{$ff-headings};
 }
 
 .light-color {
-  color: $light-color;
+    color: $light-color;
 }
 
 .primary-color {
-  color: $primary-color;
+    color: $primary-color;
+}
+
+// più scuro in basso
+.bg-black-gradient-top {
+    background-image: linear-gradient(
+        to top,
+        rgba(22, 22, 22, 1),
+        rgba(48, 49, 56, 0.4)
+    );
+}
+
+.bg-black-gradient-bottom {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(22, 22, 22, 1),
+        rgba(48, 49, 56, 0.4)
+    );
 }
 
 .bg-dark-color {
-  background-color: $dark-color;
+    background-color: $dark-color;
 }
 
 .bg-overlay {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+    );
 }
 
 .text-smaller {
-  font-size: 10px;
+    font-size: 10px;
 }
 
 // stile generico per i link del documento
 .text-link {
-  color: $light-color;
-  text-shadow: none;
+    color: $light-color;
+    text-shadow: none;
 
-  &:hover {
-    text-decoration: none;
-    color: $link-hover-color;
-  }
+    &:hover {
+        text-decoration: none;
+        color: $link-hover-color;
+    }
 }
 
 .my-scrollbar {
-  height: 200px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 10px;
-  padding-right: 25px;
-  padding-left: 0;
-
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    padding-right: 25px;
+    padding-left: 0;
 }
 
 // siccome ho un header fixed, sullo scroll dopo il click su di un link
@@ -77,83 +95,87 @@ h6 {
 // fisso un offset pari almeno all'altezza dell'header
 // :target {
 .anchor-offset {
-  display: block;
-  position: relative;
-  top: -140px;
-  visibility: hidden;
+    display: block;
+    position: relative;
+    top: -140px;
+    visibility: hidden;
 }
 
 /* ************ "back to top" button ************ */
 .scroll-to-top {
-  color: rgba(23, 163, 184, 0.33);
-  position: fixed;
-  right: 12px;
-  bottom: 10px;
-  background-color: transparent;
+    color: rgba(23, 163, 184, 0.33);
+    position: fixed;
+    right: 12px;
+    bottom: 10px;
+    background-color: transparent;
 }
 
 .scroll-to-top:hover {
-  color: $light-color;
+    color: $light-color;
 }
 
 .visible {
-  opacity: 1;
+    opacity: 1;
 }
 
 .hidden {
-  opacity: 0;
+    opacity: 0;
 }
 
 .btn-larger {
-  padding: 0.6rem 1.8rem;
+    padding: 0.6rem 1.8rem;
 }
 
 .green-on-gray-link {
-  color: $primary-color;
+    color: $primary-color;
 
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: none;
-  }
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: none;
+    }
 }
 
 .btn-custom {
-  background-color: $dark-color;
-  color: $white-color;
-  font-weight: bold;
-  border-radius: 5px;
+    background-color: $dark-color;
+    color: $white-color;
+    font-weight: bold;
+    border-radius: 5px;
 
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  transition: all 0.6s linear;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+    );
+    transition: all 0.6s linear;
 
-  &:hover {
-    color: $link-hover-color;
-  }
+    &:hover {
+        color: $link-hover-color;
+    }
 }
 
-// TINY SLIDER 2 
+// TINY SLIDER 2
 // classi per i "dots" dello slider (tiny slider 2)
 .tns-nav {
-  text-align: center;
-  margin: 20px 0 10px 0;
+    text-align: center;
+    margin: 20px 0 10px 0;
 }
 
-.tns-nav>[aria-controls] {
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  margin: 0 5px;
-  border-radius: 50%;
-  background: $white-color;
-  border: 0;
+.tns-nav > [aria-controls] {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: $white-color;
+    border: 0;
 
-  &:hover {
-    background-color: $light-color;
-  }
+    &:hover {
+        background-color: $light-color;
+    }
 }
 
-.tns-nav>.tns-nav-active {
-  background: $primary-color;
+.tns-nav > .tns-nav-active {
+    background: $primary-color;
 }
 
 /*  end commom style */

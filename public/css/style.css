@@ -16659,6 +16659,16 @@ h6 {
   color: #17A2B8;
 }
 
+.bg-black-gradient-top {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#161616), to(rgba(48, 49, 56, 0.4)));
+  background-image: linear-gradient(to top, #161616, rgba(48, 49, 56, 0.4));
+}
+
+.bg-black-gradient-bottom {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#161616), to(rgba(48, 49, 56, 0.4)));
+  background-image: linear-gradient(to bottom, #161616, rgba(48, 49, 56, 0.4));
+}
+
 .bg-dark-color {
   background-color: #026979;
 }
@@ -16835,11 +16845,6 @@ h6 {
 
 /* end jumbo style */
 /* section1 style */
-.bg-black-gradient {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#161616), to(rgba(48, 49, 56, 0.4)));
-  background-image: linear-gradient(to bottom, #161616, rgba(48, 49, 56, 0.4));
-}
-
 .section1 #my_face {
   border-radius: 50%;
   border: 3px solid #17A2B8;
@@ -16868,7 +16873,7 @@ h6 {
 }
 
 .simplebar-scrollbar::before {
-  background-image: linear-gradient(-131deg, #026979 0%, #17A2B8 50%, #06dcfd 100%);
+  background-image: linear-gradient(-131deg, #026979 0%, #17a2b8 50%, #06dcfd 100%);
 }
 
 /* end section1 style */
@@ -16909,7 +16914,7 @@ h6 {
   color: #17A2B8;
   margin-top: 5px;
 }
-#tech-skills img {
+#tech-skills .tab-tecnologie img {
   vertical-align: sub;
   height: 30px;
   max-width: 40px;
@@ -16917,7 +16922,7 @@ h6 {
 }
 
 /* end section2 style */
-/* section1 style */
+/* section3 style */
 .section3 {
   background-color: #026979;
 }
@@ -16932,7 +16937,7 @@ h6 {
   outline: none;
 }
 .section3 .slider-arrow {
-  background-color: #026979;
+  background-color: trasparent;
   color: #17A2B8;
   cursor: pointer;
 }
@@ -16950,7 +16955,7 @@ h6 {
   border-color: #06dcfd;
 }
 
-/* end section1 style */
+/* end section3 style */
 /* section4 style */
 .section4 i {
   color: #17A2B8;
