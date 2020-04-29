@@ -16950,6 +16950,8 @@ h6 {
 .section3 .slide-border {
   border: 3px solid #17A2B8;
   border-radius: 5px;
+  -webkit-transition: border-color 0.6s;
+  transition: border-color 0.6s;
 }
 .section3 .slide-border:hover {
   border-color: #06dcfd;
