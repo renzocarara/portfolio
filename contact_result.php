@@ -161,7 +161,7 @@ if (isset($_GET)){
             <div class="col-12 col-md-12 col-lg-4">
                <div class="pt-3">
                   <a class="footer-link-img" href="https://www.boolean.careers/" target="_blank"><img class="footer-img" src="public/assets/images/boolean_white_logo.png" alt="logo boolean careers" data-html="true" data-toggle="tooltip" data-placement="top" title='La mia scuola <i class="fas fa-heart my-heart"></i>'></a>
-                  <a class="footer-link-img" href="https://www.iubenda.com/" target="_blank"><img id="iubenda-img" src="public/assets/images/iubenda_logo.png" alt="logo iubenda" data-toggle="tooltip" data-placement="top" title="Gestore Privacy & Cookie Policies"></a>
+                  <a class="footer-link-img" href="https://www.iubenda.com/" target="_blank"><img id="iubenda-img" src="public/assets/images/iubenda_logo.png" alt="logo iubenda" data-toggle="tooltip" data-placement="top" title="GDPR Manager"></a>
                   <a class="footer-link-img" href="https://www.altervista.org/" target="_blank"><img class="footer-img" src="public/assets/images/altervista_logo.png" alt="logo altervista" data-toggle="tooltip" data-placement="top" title="Il mio Hosting"></a>
                </div>
             </div>
