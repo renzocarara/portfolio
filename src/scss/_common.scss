@@ -20,6 +20,27 @@ section {
     }
 }
 
+// sezione per le pagine diverse da quella principale (404, indexoffline, contact_result)
+.section-page {
+    // viewport - (min altezza footer + altezza header)
+    height: calc(100vh - calc(#{$minfFooterHeight} + #{$headerHeight}));
+
+    i {
+        color: $primary-color;
+        padding: 5px;
+
+        &:hover {
+            color: $light-color;
+        }
+    }
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
 h1,
 h2,
 h3,

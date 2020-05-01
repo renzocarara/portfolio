@@ -1,57 +1,97 @@
 /* sovrascritture dello stile di boostrap  */
 
 .navbar-dark .navbar-nav .nav-link {
-  /* meno opacità per le voci del menu */
-  color: rgba(255, 255, 255, .75);
-  /* meno padding top e bottom per le voci del menu */
-  padding: 5px;
-  margin: 0 5px 0 5px;
+    /* meno opacità per le voci del menu */
+    color: rgba(255, 255, 255, 0.75);
+    /* meno padding top e bottom per le voci del menu */
+    padding: 5px;
+    margin: 0 5px 0 5px;
 
-  &.active,
-  &:hover {
-    /* cambio il colore del hover e dell'active sulle voci del menu */
-    color: $link-hover-color;
-  }
+    &.active,
+    &:hover {
+        /* cambio il colore del hover e dell'active sulle voci del menu */
+        color: $link-hover-color;
+    }
 }
 
 .navbar .navbar-brand {
-  margin-right: 0.3rem;
+    margin-right: 0.3rem;
 }
 
 .section1 .card {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
 
 // elimino il bordo quando l'hamburger menu ha il focus
 .navbar-toggler:focus {
-  outline: none;
+    outline: none;
 }
-
 
 //== Tooltips
 //
 .tooltip-inner {
-  color: $white-color;
-  border: 1px solid $light-color;
-  background-color: $dark-color;
+    color: $white-color;
+    border: 1px solid $light-color;
+    background-color: $dark-color;
 }
 
 .tooltip.bs-tooltip-right .arrow:before {
-  border-right-color: $light-color !important;
+    border-right-color: $light-color !important;
 }
 
 .tooltip.bs-tooltip-left .arrow:before {
-  border-left-color: $light-color !important;
+    border-left-color: $light-color !important;
 }
 
 .tooltip.bs-tooltip-bottom .arrow:before {
-  border-bottom-color: $light-color !important;
-
+    border-bottom-color: $light-color !important;
 }
 
 .tooltip.bs-tooltip-top .arrow:before {
-  border-top-color: $light-color !important;
+    border-top-color: $light-color !important;
+}
+
+//== Popover
+.popover {
+    color: $white-color;
+    border: 1px solid $light-color;
+    background-color: $dark-color;
+}
+
+.bs-popover-top > .arrow::after,
+.bs-popover-auto[x-placement^="top"] > .arrow::after {
+    border-top-color: $light-color;
+}
+
+.bs-popover-right > .arrow::after,
+.bs-popover-auto[x-placement^="right"] > .arrow::after {
+    border-right-color: $light-color;
+}
+
+.bs-popover-bottom > .arrow::after,
+.bs-popover-auto[x-placement^="bottom"] > .arrow::after {
+    border-bottom-color: $light-color;
+}
+
+.bs-popover-left > .arrow::after,
+.bs-popover-auto[x-placement^="left"] > .arrow::after {
+    border-left-color: $light-color;
+}
+
+.bs-popover-bottom .popover-header::before,
+.bs-popover-auto[x-placement^="bottom"] .popover-header::before {
+    border-bottom: 1px solid $primary-color;
+}
+
+.popover-header {
+    color: $white-color;
+    background-color: $dark-color;
+    border-bottom: 1px solid $primary-color;
+}
+
+.popover-body {
+    color: $white-color;
 }
 
 /* fine sovrascritture dello stile di boostrap  */

@@ -32,15 +32,13 @@ import { tns } from "../../node_modules/tiny-slider/src/tiny-slider.js";
 // -------------------------------------------------------------------------
 //
 $(document).ready(function() {
+    // verifico se sono sulla pagina iniziale index.html
     if ($("#home").length > 0) {
-        // verifico se sono sulla pagina iniziale index.html
-
         // chiamata AJAX per recuperare dati dal DB
         $.ajax({
             url: "db_read.php",
             method: "get",
             success: function(slidesData) {
-
                 // trasformo i dati da stringa JSON in un oggetto JS
                 var slidesDataJSObj = JSON.parse(slidesData);
                 // creo dinamicamente le slides dello slider (uso Handlebars.js)

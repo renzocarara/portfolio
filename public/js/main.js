@@ -27082,8 +27082,8 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 //
 
 $(document).ready(function () {
+  // verifico se sono sulla pagina iniziale index.html
   if ($("#home").length > 0) {
-    // verifico se sono sulla pagina iniziale index.html
     // chiamata AJAX per recuperare dati dal DB
     $.ajax({
       url: "db_read.php",
