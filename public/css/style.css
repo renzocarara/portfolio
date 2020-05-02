@@ -16769,6 +16769,7 @@ h6 {
   right: 12px;
   bottom: 10px;
   background-color: transparent;
+  z-index: 10;
 }
 
 .scroll-to-top:hover {
@@ -16781,10 +16782,6 @@ h6 {
 
 .hidden {
   opacity: 0;
-}
-
-.btn-larger {
-  padding: 0.6rem 1.8rem;
 }
 
 .green-on-gray-link {
@@ -16802,8 +16799,8 @@ h6 {
   border-radius: 5px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
   background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
-  -webkit-transition: all 0.6s linear;
-  transition: all 0.6s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 .btn-custom:hover {
   color: #69e7f8;
@@ -17035,13 +17032,64 @@ h6 {
 }
 .section4 input,
 .section4 textarea {
-  border: 2px solid #17a2b8;
+  caret-color: white;
+  border-radius: unset;
+  border: none;
+  border-bottom: 2px solid #17a2b8;
+  background-color: #343a40;
+  color: #06dcfd;
+  font-size: 24px;
+}
+.section4 input:focus,
+.section4 textarea:focus {
+  background-color: #343a40;
+  color: #06dcfd;
+  outline: none;
+  box-shadow: 0 0 0 1000px #455668 inset;
+}
+.section4 input::-webkit-input-placeholder, .section4 textarea::-webkit-input-placeholder {
+  font-size: 24px;
+  color: #60838a;
+}
+.section4 input::-moz-placeholder, .section4 textarea::-moz-placeholder {
+  font-size: 24px;
+  color: #60838a;
+}
+.section4 input:-ms-input-placeholder, .section4 textarea:-ms-input-placeholder {
+  font-size: 24px;
+  color: #60838a;
+}
+.section4 input::-ms-input-placeholder, .section4 textarea::-ms-input-placeholder {
+  font-size: 24px;
+  color: #60838a;
+}
+.section4 input::placeholder,
+.section4 textarea::placeholder {
+  font-size: 24px;
+  color: #60838a;
+}
+.section4 textarea:-webkit-autofill,
+.section4 textarea:-webkit-autofill:active,
+.section4 input:-webkit-autofill,
+.section4 input:-webkit-autofill:active {
+  box-shadow: 0 0 0 1000px #343a40 inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #343a40 inset !important;
+  -webkit-text-fill-color: #06dcfd;
+}
+.section4 textarea:-webkit-autofill:focus,
+.section4 input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px #455668 inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #455668 inset !important;
+  -webkit-text-fill-color: #06dcfd;
 }
 .section4 #contact-send-btn {
   width: 180px;
 }
 .section4 [for=acceptance] {
   cursor: pointer;
+}
+.section4 #acceptance:focus {
+  box-shadow: none;
 }
 
 /* end section4 style */

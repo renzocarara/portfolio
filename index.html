@@ -290,31 +290,40 @@
                             <div class="form-row">
                                 <div class="col-md-8 mb-3">
                                     <label for="subject">Oggetto:</label><span class="star">*</span>
-                                    <input type="text" class="form-control" placeholder="l'oggetto del messaggio" id="subject" name="subject">
+                                    <input type="text" class="form-control" placeholder="oggetto del messaggio" id="subject" name="subject">
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="col-md-8 mb-3">
                                     <label for="msg">Messaggio:</label><span class="star">*</span>
-                                    <textarea class="form-control" id="msg" name="msg" rows="6" placeholder="scrivi qui il tuo messaggio" required></textarea>
+                                    <textarea class="form-control" id="msg" name="msg" rows="6" placeholder="scrivi qui il tuo messaggio..." required></textarea>
                                 </div>
                             </div>
 
-                            <p class="mb-1">Confermi di aver letto e di accettare le modalità di trattamento dei tuoi dati personali come descritto nella "<a href="https://www.iubenda.com/privacy-policy/11546089" class="iubenda-nostyle iubenda-embed iub-legal-only text-link">Privacy Policy</a>
-                                <script type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>"?</p>
+                            <div class="form-row">
+                                <div class="col-md-8 mb-3">
+                                    <p class="mb-1">Confermi di aver letto e di accettare le modalità di trattamento dei tuoi dati personali come descritto nella "<a href="https://www.iubenda.com/privacy-policy/11546089" class="iubenda-nostyle iubenda-embed iub-legal-only text-link">Privacy Policy</a>
+                                        <script type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>"?</p>
+                                </div>
+                            </div>
+
                             <div class="form-row">
                                 <input id="acceptance" type="checkbox" class="checkbox_square ml-1" name="agree" value="accetto" required>
                                 <label class="form-check-label pl-2" for="acceptance">Confermo</label><span class="star">*</span>
-
                             </div>
 
                             <!-- filtro anti-spam - re-captcha v2 di google, uso la mia site-key -->
                             <div class="g-recaptcha mt-4" data-sitekey="6LclxrMUAAAAAOIVAyoCwSesEhcLsXQbJ6H1QH_Q"></div>
                             <br>
-                            <button id="contact-send-btn" class="btn btn-custom btn-larger mt-3 mr-5 pl-5 pr-0" type="submit">
-                                <span id="contact-send-btn-txt">Invia</span><i id="contact-spinner" class="fas fa-spinner fa-spin fa-lg ml-1 hidden"></i><br>
-                            </button>
+                            <div class="form-row">
+                                <div class="col-md-8 mb-3">
+                                    <!-- <button id="contact-send-btn" class="btn btn-custom btn-larger mt-3 mr-5 pl-5 pr-0" type="submit"> -->
+                                    <button id="contact-send-btn" class="btn btn-lg w-100 btn-custom pl-5 mt-3" type="submit">
+                                        <span id="contact-send-btn-txt">Invia</span><i id="contact-spinner" class="fas fa-spinner fa-spin fa-lg ml-1 hidden"></i><br>
+                                    </button>
+                                </div>
+                            </div>
                         </form>
 
                         <p class=" mt-5 h5">oppure trovami su:</p>

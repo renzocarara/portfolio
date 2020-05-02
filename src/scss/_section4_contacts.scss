@@ -1,43 +1,104 @@
- /* section4 style */
- .section4 {
+/* section4 style */
+.section4 {
+    i {
+        color: $primary-color;
+        padding: 5px;
+        margin-right: 20px;
+    }
 
-     i {
-         color: $primary-color;
-         padding: 5px;
-         margin-right: 20px;
+    .contact-links:hover {
+        color: $light-color;
+    }
 
-     }
+    .checkbox_square {
+        height: 25px;
+        width: 25px;
+        vertical-align: middle;
+        margin: 0;
+        cursor: pointer;
+    }
 
-     .contact-links:hover {
-         color: $light-color;
-     }
+    .star {
+        font-size: 20px;
+        color: $link-hover-color;
+    }
 
-     .checkbox_square {
-         height: 25px;
-         width: 25px;
-         vertical-align: middle;
-         margin: 0;
-         cursor: pointer;
-     }
+    input,
+    textarea {
+        // setto il colore del cursore a bianco per renderlo più visibile
+        caret-color: white;
 
-     .star {
-         font-size: 20px;
-         color: $link-hover-color;
-     }
+        // lascio solo una linea sul fondo della box
+        border-radius: unset;
+        border: none;
+        border-bottom: 2px solid #17a2b8;
 
-     input,
-     textarea {
-         border: 2px solid $primary-color;
-     }
+        // applico alla box lo stesso colore di sfondo della sezione
+        background-color: $bg-dark-color;
+        color: $light-color;
+        font-size: 24px;
 
-     #contact-send-btn {
-         width: 180px;
-     }
+        &:focus {
+            // quando un box guadagna il focus, evito che diventi per un attimo con lo sfondo bianco
+            background-color: $bg-dark-color;
+            color: $light-color;
+            outline: none;
+            // quando un box guadagna il focus lo evidenzio con uno sfondo più chiaro
+            // applicandogli una shadow "interna" (inset)
+            box-shadow: 0 0 0 1000px $gray-darker-color inset;
+        }
 
-     [for="acceptance"] {
-         cursor: pointer;
-     }
- }
+        &::placeholder {
+            font-size: 24px;
+            color: $light-color-grayed;
+        }
 
+        // &:hover {
+        //     box-shadow: 0 0 0 1000px $gray-darker-color inset;
+        // }
+    }
 
- /* end section4 style */
+    // lo stile che segue serve per evitare che il box prenda lo stile
+    // di una selezione "autocomplete" fatta dall'utente, cioè quando l'utente
+    // seleziona una voce da un elenco di voci precedentemente inserite
+    // NOTA: un'altra possibilità è invece disabilitare l'autocomplete del browser
+    // aggiungendo l'attributo autocomplete="off" sul form
+    textarea:-webkit-autofill,
+    // textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:active,
+    input:-webkit-autofill,
+    // input:-webkit-autofill:hover,
+    input:-webkit-autofill:active {
+        box-shadow: 0 0 0 1000px $bg-dark-color inset !important;
+        -webkit-box-shadow: 0 0 0 1000px $bg-dark-color inset !important;
+        -webkit-text-fill-color: $light-color;
+    }
+
+    // anche nel caso dei box "autofillati" quando un box guadagna il focus
+    // lo evidenzio con uno sfondo più chiaro applicandogli una shadow "interna" (inset)
+    textarea:-webkit-autofill:focus,
+    input:-webkit-autofill:focus {
+        // textarea:-webkit-autofill:hover,
+        // input:-webkit-autofill:hover
+        box-shadow: 0 0 0 1000px $gray-darker-color inset !important;
+        -webkit-box-shadow: 0 0 0 1000px $gray-darker-color inset !important;
+        -webkit-text-fill-color: $light-color;
+    }
+
+    #contact-send-btn {
+        width: 180px;
+    }
+
+    [for="acceptance"] {
+        cursor: pointer;
+    }
+
+    #acceptance:focus {
+        // a differenza delle altre box, non applico un background color
+        // quando la checkbox guadagna il focus, altrimenti non vedo più il "baffo" di selezione
+        // che è grigio pure lui, come lo sfondo
+        box-shadow: none;
+    }
+}
+
+/* end section4 style */
