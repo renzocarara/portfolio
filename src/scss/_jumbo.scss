@@ -11,6 +11,7 @@
     overflow: hidden;
     background-attachment: fixed;
     padding-bottom: 0;
+    // filter: grayscale(1);
 }
 
 .overlay {
@@ -28,6 +29,11 @@
 
 .title {
     width: 60%;
+    // filter: grayscale(1);
+    transition: 1s;
+    // &:hover {
+    // filter: grayscale(0);
+    // }
 }
 
 .subtitle {

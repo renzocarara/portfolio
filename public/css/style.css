@@ -16888,6 +16888,8 @@ h6 {
 
 .title {
   width: 60%;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .subtitle {
