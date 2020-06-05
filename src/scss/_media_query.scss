@@ -1,11 +1,13 @@
 /* ----------------------------- MEDIA QUERY ------------------------------- */
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     .subtitle {
         font-size: 30px;
+        // text-shadow: -1px 0 #06dcfd, 0 1px #06dcfd, 1px 0 #06dcfd, 0 -1px #06dcfd;
+        text-shadow: none;
     }
 }
 
-@media screen and (max-width:575px) {
+@media screen and (max-width: 575px) {
     .subtitle {
         font-size: 24px;
     }
@@ -19,13 +21,13 @@
     }
 }
 
-@media screen and (max-width:440px) {
+@media screen and (max-width: 440px) {
     .subtitle {
         font-size: 20px;
     }
 }
 
-@media screen and (max-width:380px) {
+@media screen and (max-width: 380px) {
     .subtitle {
         font-size: 16px;
     }
@@ -39,7 +41,6 @@
 // per i device che non hanno "hover" (cioè quelli touch tipo mobile e tablets)
 // sovrascrivo la regola di hover definita, ripristinando il colore originale quando viene eseguito il touch
 @media (hover: none) {
-
     // bottone BTT (back to top)
     .scroll-to-top:hover {
         color: rgba(23, 163, 184, 0.33);
@@ -56,7 +57,7 @@
     }
 
     // dots dello slider nella sezione portfolio
-    .tns-nav>[aria-controls]:hover {
+    .tns-nav > [aria-controls]:hover {
         background-color: $primary-color;
     }
 
@@ -64,5 +65,4 @@
     .slide-border:hover {
         border-color: $primary-color;
     }
-
 }

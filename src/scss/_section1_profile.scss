@@ -5,6 +5,11 @@
         border: 3px solid $primary-color;
         width: 100px;
         margin-bottom: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+    #my_face:hover {
+        transform: scale(1.15);
+        border: 3px solid $light-color;
     }
 
     #my_signature {

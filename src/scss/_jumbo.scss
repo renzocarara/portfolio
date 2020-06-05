@@ -39,6 +39,8 @@
 .subtitle {
     margin-right: 2px;
     color: white;
+    text-shadow: -1px 0 $light-color, 0 1px $light-color, 1px 0 $light-color,
+        0 -1px $light-color;
 }
 
 /* end jumbo style */

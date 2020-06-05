@@ -16895,6 +16895,7 @@ h6 {
 .subtitle {
   margin-right: 2px;
   color: white;
+  text-shadow: -1px 0 #06dcfd, 0 1px #06dcfd, 1px 0 #06dcfd, 0 -1px #06dcfd;
 }
 
 /* end jumbo style */
@@ -16904,6 +16905,13 @@ h6 {
   border: 3px solid #17a2b8;
   width: 100px;
   margin-bottom: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.section1 #my_face:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  border: 3px solid #06dcfd;
 }
 .section1 #my_signature {
   margin-top: 20px;
@@ -16979,6 +16987,8 @@ h6 {
 /* section3 style */
 .section3 {
   background-color: #026979;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#026979), to(#092b2d));
+  background-image: linear-gradient(to bottom right, #026979, #092b2d);
 }
 .section3 .my-slide img {
   height: 100%;
@@ -17155,6 +17165,7 @@ footer a:hover {
 @media screen and (max-width: 767px) {
   .subtitle {
     font-size: 30px;
+    text-shadow: none;
   }
 }
 @media screen and (max-width: 575px) {

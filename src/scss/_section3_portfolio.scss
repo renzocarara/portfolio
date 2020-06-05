@@ -1,6 +1,11 @@
 /* section3 style */
 .section3 {
     background-color: $dark-color;
+    background-image: linear-gradient(
+        to bottom right,
+        $dark-color,
+        $very-dark-color
+    );
 
     .my-slide {
         img {
