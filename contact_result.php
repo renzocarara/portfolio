@@ -41,6 +41,16 @@
 
     <title>Renzo Carara Web Developer Portfolio - Invio messaggio</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168653510-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-168653510-1', { 'anonymize_ip': true });
+    </script>
+
+
 </head>
 <?php 
 

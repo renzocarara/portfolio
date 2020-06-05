@@ -1,4 +1,5 @@
 # elenco file e directory che verranno ignorati da git
+gtag.script_js
 _altro
 node_modules/
 package-lock.json
