@@ -26,7 +26,9 @@ require('simplebar');
 const Handlebars = require('handlebars');
 //
 // tiny slider 2
-import { tns } from '../../node_modules/tiny-slider/src/tiny-slider.js';
+import {
+    tns
+} from '../../node_modules/tiny-slider/src/tiny-slider.js';
 //
 
 // -------------------------------------------------------------------------
@@ -129,12 +131,11 @@ function createSlideModals(slidesDataJSObj) {
             description: slidesDataJSObj[i].description,
             technologies: slidesDataJSObj[i].technologies,
             code_link: slidesDataJSObj[i].code_link,
-            site_link:
-                slidesDataJSObj[i].site_link == 'not_available'
-                    ? ''
-                    : '<a href="' +
-                      slidesDataJSObj[i].site_link +
-                      '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>',
+            site_link: slidesDataJSObj[i].site_link == 'not_available' ?
+                '' :
+                '<a href="' +
+                slidesDataJSObj[i].site_link +
+                '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>',
         };
 
         // leggo il codice html dal template HANDLEBARS
@@ -232,8 +233,7 @@ function internalLinkSmoothScroll() {
             // Using jQuery's animate() method to add smooth page scroll
             // The optional number (800) specifies the number
             // of milliseconds it takes to scroll to the specified area
-            $('html, body').animate(
-                {
+            $('html, body').animate({
                     scrollTop: $(hash).offset().top,
                 },
                 800,
@@ -301,7 +301,7 @@ function createSlider() {
         controlsContainer: '.slider-buttons',
 
         navPosition: 'bottom',
-        navAsThumbnails: true, // 1 dot per ogni slide
+        navAsThumbnails: false, // 1 dot per ogni slide
 
         preventActionWhenRunning: true,
 
