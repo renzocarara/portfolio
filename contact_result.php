@@ -37,7 +37,7 @@
     <!-- aos -->
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
     <!-- my css -->
-    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="public/css/style.min.css" />
 
     <title>Renzo Carara Web Developer Portfolio - Invio messaggio</title>
 
@@ -181,7 +181,7 @@ if (isset($_GET)){
    </footer>
 
     <!-- my js file -->
-    <script src="public/js/main.js"></script>
+    <script src="public/js/main.min.js"></script>
 
 </body>
 
