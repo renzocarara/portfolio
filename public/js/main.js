@@ -27319,9 +27319,12 @@ module.exports = g;
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_tiny_slider_src_tiny_slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/tiny-slider/src/tiny-slider.js */ "./node_modules/tiny-slider/src/tiny-slider.js");
 // requires e inizializzazioni ---------------------------------------------
 //
 // jquery
@@ -27352,14 +27355,10 @@ __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.es
 
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js"); //
 // tiny slider 2
-// import {
-//     tns
-// } from '../../node_modules/tiny-slider/src/tiny-slider.js';
 
 
-__webpack_require__(/*! ../../node_modules/tiny-slider/src/tiny-slider.js */ "./node_modules/tiny-slider/src/tiny-slider.js"); // -------------------------------------------------------------------------
+ // -------------------------------------------------------------------------
 //
-
 
 $(document).ready(function () {
   // verifico se sono sulla pagina iniziale index.html
@@ -27576,7 +27575,7 @@ function showContactSpinner() {
 function createSlider() {
   // DESCRIZIONE:
   // creo lo slider con la libreria tiny slider 2
-  var slider = tns({
+  var slider = Object(_node_modules_tiny_slider_src_tiny_slider_js__WEBPACK_IMPORTED_MODULE_0__["tns"])({
     container: ".my-slider",
     items: 1,
     gutter: 20,

@@ -16285,12 +16285,16 @@ readers do not read off random characters that represent icons */
 
 /* end reset style */
 /* sovrascritture dello stile di boostrap  */
+.navbar.fixed-top {
+  z-index: 1080;
+}
+
 .navbar-dark .navbar-nav .nav-link {
   /* meno opacità per le voci del menu */
   color: rgba(255, 255, 255, 0.75);
   /* meno padding top e bottom per le voci del menu */
   padding: 5px;
-  margin: 0 5px 0 5px;
+  margin: 0 5px;
 }
 .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
   /* cambio il colore del hover e dell'active sulle voci del menu */
@@ -16338,28 +16342,28 @@ readers do not read off random characters that represent icons */
   background-color: #026979;
 }
 
-.bs-popover-top > .arrow::after,
-.bs-popover-auto[x-placement^=top] > .arrow::after {
+.bs-popover-auto[x-placement^=top] > .arrow::after,
+.bs-popover-top > .arrow::after {
   border-top-color: #06dcfd;
 }
 
-.bs-popover-right > .arrow::after,
-.bs-popover-auto[x-placement^=right] > .arrow::after {
+.bs-popover-auto[x-placement^=right] > .arrow::after,
+.bs-popover-right > .arrow::after {
   border-right-color: #06dcfd;
 }
 
-.bs-popover-bottom > .arrow::after,
-.bs-popover-auto[x-placement^=bottom] > .arrow::after {
+.bs-popover-auto[x-placement^=bottom] > .arrow::after,
+.bs-popover-bottom > .arrow::after {
   border-bottom-color: #06dcfd;
 }
 
-.bs-popover-left > .arrow::after,
-.bs-popover-auto[x-placement^=left] > .arrow::after {
+.bs-popover-auto[x-placement^=left] > .arrow::after,
+.bs-popover-left > .arrow::after {
   border-left-color: #06dcfd;
 }
 
-.bs-popover-bottom .popover-header::before,
-.bs-popover-auto[x-placement^=bottom] .popover-header::before {
+.bs-popover-auto[x-placement^=bottom] .popover-header::before,
+.bs-popover-bottom .popover-header::before {
   border-bottom: 1px solid #17a2b8;
 }
 

@@ -1,11 +1,15 @@
 /* sovrascritture dello stile di boostrap  */
+.navbar.fixed-top {
+    // massimo z-index per la barra di navigazione/header fissa
+    z-index: 1080;
+}
 
 .navbar-dark .navbar-nav .nav-link {
     /* meno opacità per le voci del menu */
     color: rgba(255, 255, 255, 0.75);
     /* meno padding top e bottom per le voci del menu */
     padding: 5px;
-    margin: 0 5px 0 5px;
+    margin: 0 5px;
 
     &.active,
     &:hover {
@@ -22,14 +26,14 @@
     background-color: transparent;
     border: none;
 }
-
 // elimino il bordo quando l'hamburger menu ha il focus
+
 .navbar-toggler:focus {
     outline: none;
 }
-
 //== Tooltips
 //
+
 .tooltip-inner {
     color: $white-color;
     border: 1px solid $light-color;
@@ -51,36 +55,36 @@
 .tooltip.bs-tooltip-top .arrow:before {
     border-top-color: $light-color !important;
 }
-
 //== Popover
+
 .popover {
     color: $white-color;
     border: 1px solid $light-color;
     background-color: $dark-color;
 }
 
-.bs-popover-top > .arrow::after,
-.bs-popover-auto[x-placement^="top"] > .arrow::after {
+.bs-popover-auto[x-placement^="top"] > .arrow::after,
+.bs-popover-top > .arrow::after {
     border-top-color: $light-color;
 }
 
-.bs-popover-right > .arrow::after,
-.bs-popover-auto[x-placement^="right"] > .arrow::after {
+.bs-popover-auto[x-placement^="right"] > .arrow::after,
+.bs-popover-right > .arrow::after {
     border-right-color: $light-color;
 }
 
-.bs-popover-bottom > .arrow::after,
-.bs-popover-auto[x-placement^="bottom"] > .arrow::after {
+.bs-popover-auto[x-placement^="bottom"] > .arrow::after,
+.bs-popover-bottom > .arrow::after {
     border-bottom-color: $light-color;
 }
 
-.bs-popover-left > .arrow::after,
-.bs-popover-auto[x-placement^="left"] > .arrow::after {
+.bs-popover-auto[x-placement^="left"] > .arrow::after,
+.bs-popover-left > .arrow::after {
     border-left-color: $light-color;
 }
 
-.bs-popover-bottom .popover-header::before,
-.bs-popover-auto[x-placement^="bottom"] .popover-header::before {
+.bs-popover-auto[x-placement^="bottom"] .popover-header::before,
+.bs-popover-bottom .popover-header::before {
     border-bottom: 1px solid $primary-color;
 }
 
@@ -93,5 +97,4 @@
 .popover-body {
     color: $white-color;
 }
-
 /* fine sovrascritture dello stile di boostrap  */
