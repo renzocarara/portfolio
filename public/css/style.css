@@ -16285,10 +16285,6 @@ readers do not read off random characters that represent icons */
 
 /* end reset style */
 /* sovrascritture dello stile di boostrap  */
-.navbar.fixed-top {
-  z-index: 1080;
-}
-
 .navbar-dark .navbar-nav .nav-link {
   /* meno opacità per le voci del menu */
   color: rgba(255, 255, 255, 0.75);

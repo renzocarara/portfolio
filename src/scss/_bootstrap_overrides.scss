@@ -1,9 +1,4 @@
 /* sovrascritture dello stile di boostrap  */
-.navbar.fixed-top {
-    // massimo z-index per la barra di navigazione/header fissa
-    z-index: 1080;
-}
-
 .navbar-dark .navbar-nav .nav-link {
     /* meno opacità per le voci del menu */
     color: rgba(255, 255, 255, 0.75);
