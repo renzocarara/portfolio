@@ -16380,9 +16380,9 @@ body {
   position: relative;
 }
 
-textarea:focus,
+button:focus,
 input:focus,
-button:focus {
+textarea:focus {
   outline: none;
   box-shadow: none;
 }
@@ -16392,6 +16392,23 @@ section {
 }
 section h2 {
   font-weight: bold;
+}
+
+/* Sets the dimensions of the entire scrollbar */
+html::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* The grabbable scrollbar button  */
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #026979, #17a2b8, #06dcfd);
+  border-radius: 30px;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* The vertical scrollbar background */
+html::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #201c29, #201c29 1px, #100e17 0, #100e17);
 }
 
 .section-page {
@@ -16458,9 +16475,7 @@ h6 {
   height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 10px;
-  padding-right: 25px;
-  padding-left: 0;
+  padding: 10px 25px 10px 0;
 }
 
 .anchor-offset {
@@ -16514,7 +16529,7 @@ h6 {
 
 .tns-nav {
   text-align: center;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 10px;
 }
 
 .tns-nav > [aria-controls] {

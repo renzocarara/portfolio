@@ -5,9 +5,9 @@ body {
     position: relative;
 }
 
-textarea:focus,
+button:focus,
 input:focus,
-button:focus {
+textarea:focus {
     outline: none;
     box-shadow: none;
 }
@@ -19,7 +19,27 @@ section {
         font-weight: bold;
     }
 }
+// customizzazione scrollbar verticale, solo per Chrome, Safari, and Edge.
+/* Sets the dimensions of the entire scrollbar */
 
+html::-webkit-scrollbar {
+    width: 15px;
+    // height: 30px;
+}
+/* The grabbable scrollbar button  */
+
+html::-webkit-scrollbar-thumb {
+    // background: -webkit-gradient(linear,left top,left bottom,from(#026979),to(#06dcfd));
+    background: -webkit-linear-gradient(180deg,#026979,#17a2b8,#06dcfd);
+    background: linear-gradient(180deg,#026979,#17a2b8,#06dcfd);
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+/* The vertical scrollbar background */
+
+html::-webkit-scrollbar-track {
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
+}
 // sezione per le pagine diverse da quella principale (404, indexoffline, contact_result)
 .section-page {
     // viewport - (min altezza footer + altezza header)
@@ -57,22 +77,14 @@ h6 {
 .primary-color {
     color: $primary-color;
 }
-
 // più scuro in basso
+
 .bg-black-gradient-top {
-    background-image: linear-gradient(
-        to top,
-        rgba(22, 22, 22, 1),
-        rgba(48, 49, 56, 0.4)
-    );
+    background-image: linear-gradient(to top, rgba(22, 22, 22, 1), rgba(48, 49, 56, 0.4));
 }
 
 .bg-black-gradient-bottom {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(22, 22, 22, 1),
-        rgba(48, 49, 56, 0.4)
-    );
+    background-image: linear-gradient(to bottom, rgba(22, 22, 22, 1), rgba(48, 49, 56, 0.4));
 }
 
 .bg-dark-color {
@@ -80,18 +92,14 @@ h6 {
 }
 
 .bg-overlay {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0)
-    );
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .text-smaller {
     font-size: 10px;
 }
-
 // stile generico per i link del documento
+
 .text-link {
     color: $light-color;
     text-shadow: none;
@@ -106,23 +114,20 @@ h6 {
     height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 10px;
-    padding-right: 25px;
-    padding-left: 0;
+    padding: 10px 25px 10px 0;
 }
-
 // siccome ho un header fixed, sullo scroll dopo il click su di un link
 // interno il posizionamento sballerebbe di un altezza pari all'header
 // fisso un offset pari almeno all'altezza dell'header
-// :target {
+
 .anchor-offset {
     display: block;
     position: relative;
     top: -140px;
     visibility: hidden;
 }
-
 /* ************ "back to top" button ************ */
+
 .scroll-to-top {
     color: rgba(23, 163, 184, 0.33);
     position: fixed;
@@ -143,7 +148,6 @@ h6 {
 .hidden {
     opacity: 0;
 }
-
 // .btn-larger {
 //     padding: 0.6rem 1.8rem;
 // }
@@ -162,24 +166,19 @@ h6 {
     color: $white-color;
     font-weight: bold;
     border-radius: 5px;
-
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0)
-    );
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     transition: all 0.5s linear;
 
     &:hover {
         color: $link-hover-color;
     }
 }
-
 // TINY SLIDER 2
 // classi per i "dots" dello slider (tiny slider 2)
+
 .tns-nav {
     text-align: center;
-    margin: 20px 0 10px 0;
+    margin: 20px 0 10px;
 }
 
 .tns-nav > [aria-controls] {
@@ -199,5 +198,4 @@ h6 {
 .tns-nav > .tns-nav-active {
     background: $primary-color;
 }
-
 /*  end commom style */
