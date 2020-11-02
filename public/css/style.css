@@ -16702,8 +16702,10 @@ h6 {
 /* end section2 style */
 /* section3 style */
 .section3 {
-  background-color: #026979;
-  background-image: linear-gradient(to bottom right, #026979, #092b2d);
+  background: linear-gradient(-45deg, #092b2d, #026979, #455668, #343a40);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 25s ease infinite;
+          animation: gradient 25s ease infinite;
 }
 .section3 .my-slide img {
   height: 100%;
@@ -16735,6 +16737,29 @@ h6 {
   border-color: #06dcfd;
 }
 
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
 /* end section3 style */
 /* section4 style */
 .section4 i {

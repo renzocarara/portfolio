@@ -1,11 +1,17 @@
 /* section3 style */
+
 .section3 {
-    background-color: $dark-color;
-    background-image: linear-gradient(
-        to bottom right,
-        $dark-color,
-        $very-dark-color
-    );
+    // background fisso
+    // background-color: $dark-color;
+    // background-image: linear-gradient(
+    //     to bottom right,
+    //     $dark-color,
+    //     $very-dark-color
+    // );
+    // background animato
+    background: linear-gradient(-45deg, $very-dark-color, $dark-color, $gray-darker-color,$bg-dark-color,);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
 
     .my-slide {
         img {
@@ -48,5 +54,17 @@
         }
     }
 }
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
 
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
 /* end section3 style */
