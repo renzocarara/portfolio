@@ -299,6 +299,7 @@ function createSlider() {
     controlsPosition: "bottom",
     controlsContainer: ".slider-buttons",
 
+    nav: false, // on smal devices do not display dots
     navPosition: "bottom",
     navAsThumbnails: false, // 1 dot per ogni slide
 
@@ -308,9 +309,11 @@ function createSlider() {
     responsive: {
       "768": {
         items: 2,
+        nav: true, // enable dots for bigger devices
       },
       "1200": {
         items: 3,
+        nav: true, // enable dots for bigger devices
       },
     },
 
