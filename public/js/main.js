@@ -27581,6 +27581,8 @@ function createSlider() {
     gutter: 20,
     controlsPosition: "bottom",
     controlsContainer: ".slider-buttons",
+    nav: false,
+    // on smal devices do not display dots
     navPosition: "bottom",
     navAsThumbnails: false,
     // 1 dot per ogni slide
@@ -27588,10 +27590,14 @@ function createSlider() {
     // breakpoint che scatta da n px in su
     responsive: {
       "768": {
-        items: 2
+        items: 2,
+        nav: true // enable dots for bigger devices
+
       },
       "1200": {
-        items: 3
+        items: 3,
+        nav: true // enable dots for bigger devices
+
       }
     },
     speed: 400,
@@ -27632,8 +27638,8 @@ function hideTooltips() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\DATA\SVILUPPO\sites\renzocarara.it\src\js\app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! C:\DATA\SVILUPPO\sites\renzocarara.it\src\scss\app.scss */"./src/scss/app.scss");
+__webpack_require__(/*! /media/renzo/data/sviluppo/sites/renzocarara.it/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /media/renzo/data/sviluppo/sites/renzocarara.it/src/scss/app.scss */"./src/scss/app.scss");
 
 
 /***/ })
