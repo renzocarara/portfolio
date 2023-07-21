@@ -127,7 +127,7 @@ if (isset($_GET)){
          <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                <div class="mb-1 pt-3">
-                  &copy; 2020 - Renzo Carara
+                  &copy; <?php echo date("Y"); ?> - Renzo Carara
                </div>
             </div>
 

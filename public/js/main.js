@@ -27363,7 +27363,9 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 $(document).ready(function () {
   // verifico se sono sulla pagina iniziale index.html
   if ($("#home").length > 0) {
-    // chiamata AJAX per recuperare dati dal DB
+    // setto l'anno del copyright nel footer della home page
+    setCopyrightYear(); // chiamata AJAX per recuperare dati dal DB
+
     $.ajax({
       url: "db_read.php",
       method: "get",
@@ -27400,6 +27402,14 @@ $(document).ready(function () {
     showContactSpinner();
   }
 }); // -------------------------------- FUNCTIONs ---------------------------------
+
+function setCopyrightYear() {
+  // DESCRIZIONE:
+  // imposta l'anno corrente nello span  del copyright
+  var yearSpan = document.getElementById('current-year');
+  var currentYear = new Date().getFullYear();
+  yearSpan.innerHTML = currentYear;
+}
 
 function createSlides(slidesDataJSObj) {
   // DESCRIZIONE:
@@ -27638,8 +27648,8 @@ function hideTooltips() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /media/renzo/data/sviluppo/sites/renzocarara.it/src/js/app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! /media/renzo/data/sviluppo/sites/renzocarara.it/src/scss/app.scss */"./src/scss/app.scss");
+__webpack_require__(/*! D:\sviluppo\sites\renzocarara.it\src\js\app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! D:\sviluppo\sites\renzocarara.it\src\scss\app.scss */"./src/scss/app.scss");
 
 
 /***/ })

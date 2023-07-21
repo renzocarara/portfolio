@@ -31,8 +31,13 @@ import { tns } from "../../node_modules/tiny-slider/src/tiny-slider.js";
 // -------------------------------------------------------------------------
 //
 $(document).ready(function() {
-  // verifico se sono sulla pagina iniziale index.html
-  if ($("#home").length > 0) {
+
+    // verifico se sono sulla pagina iniziale index.html
+    if ($("#home").length > 0) {
+        
+    // setto l'anno del copyright nel footer della home page
+    setCopyrightYear()
+
     // chiamata AJAX per recuperare dati dal DB
     $.ajax({
       url: "db_read.php",
@@ -78,6 +83,14 @@ $(document).ready(function() {
 });
 
 // -------------------------------- FUNCTIONs ---------------------------------
+
+function setCopyrightYear() {
+  // DESCRIZIONE:
+  // imposta l'anno corrente nello span  del copyright
+  const yearSpan = document.getElementById('current-year')
+  const currentYear = new Date().getFullYear()
+  yearSpan.innerHTML = currentYear
+}
 
 function createSlides(slidesDataJSObj) {
   // DESCRIZIONE:
