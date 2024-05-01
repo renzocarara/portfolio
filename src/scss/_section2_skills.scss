@@ -57,6 +57,14 @@
         max-width: 40px;
         margin-top: 5px;
     }
+
+    .tab-cert img {
+        opacity: 0.5;
+        transition: opacity 0.5s;
+        &:hover {
+            opacity: 1.0;
+        }
+    }
 }
 
 /* end section2 style */
