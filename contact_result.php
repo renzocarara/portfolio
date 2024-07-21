@@ -181,7 +181,7 @@ if (isset($_GET)){
    </footer>
 
     <!-- my js file -->
-    <script src="public/js/main.min.js"></script>
+    <script src="public/js/main.js"></script>
 
 </body>
 

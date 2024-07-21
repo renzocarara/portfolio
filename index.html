@@ -41,7 +41,8 @@
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
 
     <!-- my css -->
-    <link rel="stylesheet" href="public/css/style.min.css" />
+    <!-- nota: lanciando "npm run prod" il file style.css viene generato già minificato -->
+    <link rel="stylesheet" href="public/css/style.css" />
 
     <title>Renzo Carara Web Developer Portfolio</title>
 
@@ -152,25 +153,26 @@
                         class="light-color fas fa-address-card"></i></h2>
                 <div class="row">
 
-                    <div class="col-12 col-md-12 col-lg-4 card">
+                    <div class="col-12 col-md-12 col-lg-12 card">
                         <div class="card-body">
                             <h5 class="card-title">La mia storia in breve</h5>
-                            <p data-simplebar data-simplebar-auto-hide="false" class="card-text my-scrollbar "><br>
+                            <!-- <p data-simplebar data-simplebar-auto-hide="false" class="card-text my-scrollbar "><br> -->
+                            <p class="card-text"><br>
                                 Nel 2019 concludo un'esperienza lavorativa che mi ha impegnato per oltre 10 anni, con
                                 l'intenzione di reinserirmi nel settore IT, ovvero ciò che veramente mi piace ed
                                 appassiona.<br>
                                 Devo ripartire da zero.<br>
                                 Ad ottobre 2019, inizio un corso full-time della durata di 6
-                                mesi (presso <a class="text-link" href="https://www.boolean.careers/"
+                                mesi (con <a class="text-link" href="https://www.boolean.careers/"
                                     target="_blank">Boolean Careers</a>),
                                 per diventare un Junior Full Stack Web Developer.<br>
                                 Completata con profitto la mia formazione, nel febbraio 2021 ho l'occasione di iniziare
                                 uno stage di 6 mesi presso una startup del settore PropTech.<br> Concluso lo stage vengo assunto in azienda
-                                con il ruolo di Full-stack developer.
+                                con il ruolo di Full-stack developer, dove attualmente porto avanti progetti web di vario tipo e dimensione.
                             </p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4 card">
+                    <div class="col-12 col-md-12 col-lg-6 card">
                         <div class="card-body">
                             <div class="text-center mt-1">
                                 <img id="my_face" class="img-fluid" src="public/assets/images/rc_foto.png"
@@ -178,31 +180,41 @@
                                     data-placement="left"
                                     title="Piacere di averti qui,<br>ti auguro una<br>buona navigazione!">
                                     <p class="card-text mt-2 mb-4">Scarica il mio curriculum vitae completo, in formato
-                                        stampabile (.pdf)</p>
+                                        stampabile (.pdf)
+                                    </p>
                                     
-                                        <div class="text-center"><a class="btn btn-custom"
+                                    <div class="text-center"><a class="btn btn-custom"
                                         href="public/assets/cv_rc.pdf" target="_blank"
-                                        download="CV_RenzoCarara">Download CV</a></div>
+                                        download="CV_RenzoCarara">Download CV</a>
                                     </div>
+                                    
+                            <!-- <h5 class="card-title">Altre Informazioni</h5> -->
+                            <!-- <p class="card-text">Diploma di Perito Informatico - I.T.I.S. Luigi Galvani - Milano.</p> -->
+                            <!-- <p class="card-text">Nato a Milano.<br>
+                                Patente B, automunito.<br>
+                            </p> -->
+                                  
+                            </div>
 
                             <!-- <p class="text-smaller">ATTENZIONE: per ragioni di privacy il file è protetto da password,
                                 inviami un
                                 messaggio dalla sezione <a class="smooth-link text-link" href="#contatti">"Contatti"</a>
                             </p> -->
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 card">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Inquadra il QR Code e scarica</h5>
-                            <!-- <h5 class="card-title">Altre Informazioni</h5> -->
-                            <!-- <p class="card-text">Diploma di Perito Informatico - I.T.I.S. Luigi Galvani - Milano.</p> -->
-                            <!-- <p class="card-text">Nato a Milano.<br>
-                                Patente B, automunito.<br>
-                            </p> -->
-                            <img data-toggle="tooltip" data-delay="400" data-html="true"
-                            data-placement="right" class="img-fluid" src="public/assets/images/qr_cv_renzo.png" title="Scarica il mio CV" alt="qr code to cv">
+                    </div> 
+
+                    <div class="col-12 col-md-12 col-lg-6 card">
+                        <div class="card-body">
+                            <div class="text-center mt-1">
+                                <h5 class="card-title">Inquadra e scarica</h5>
+                                <img data-toggle="tooltip" data-delay="400" data-html="true"
+                                data-placement="bottom" class="img-fluid" src="public/assets/images/qr_cv_renzo.png" title="Scarica il mio CV" alt="qr code to cv">
+
+                            </div>
                         </div>
-                    </div>
+                    </div> 
+
+
                 </div> <!-- row -->
             </div> <!-- container -->
 
@@ -249,40 +261,71 @@
                                         role="tab" aria-controls="nav-os" aria-selected="false">OS</a>
                                 </div>
                             </nav>
-
+                            
                             <div class="tab-content text-secondary mt-3 ml-3" id="nav-tabContent" data-aos="fade-left"
-                                data-aos-duration="1000">
+                            data-aos-duration="1000">
                                 <!-- tab "Tech" -->
-                                <div class="tab-pane fade show active tab-tech " id="nav-tech" role="tabpanel"
-                                    aria-labelledby="nav-tech-tab">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
-                                            <i class="fab fa-js-square fa-2x"></i> <b>Javascript</b><br>
-                                            <img src="public/assets/images/techs/typescript.jpg" alt="typescript logo">
-                                            <b>Typescript</b><br>
-                                            <i class="fab fa-node-js fa-2x"></i> <b>Node.js</b><br>
-                                            <i class="fab fa-react fa-2x"></i> <b>React.js</b><br>
-                                            <img src="public/assets/images/techs/next.png" alt="nextjs logo">
-                                            Next.js<br>
-                                            <img src="public/assets/images/techs/jquery.png" alt="jquery logo">
-                                            JQuery<br>
+                                <div class="tab-pane fade show active tab-tech" id="nav-tech" role="tabpanel"
+                                aria-labelledby="nav-tech-tab">
+                                
+                                    <nav>
+                                        <div class="nav nav-tabs2 card-text text-secondary" id="nav2-tab" role="tablist">
+                                            <a class="nav-item nav-link active" id="nav-attuali-tab" data-toggle="tab"
+                                                href="#nav-attuali" role="tab" aria-controls="nav-attuali"
+                                                aria-selected="true">Attuali</a>
+                                            <a class="nav-item nav-link" id="nav-altre-tab" data-toggle="tab" href="#nav-altre"
+                                                role="tab" aria-controls="nav-altre" aria-selected="false">Altre</a>
                                         </div>
-                                        <div class="col-12 col-sm-6 col-md-4  pl-2 pr-2">
-                                            <img src="public/assets/images/techs/postgresql.png" alt="mysql logo"> <b>PostgresSQL</b><br>
-                                            <i class="fab fa-php fa-2x"></i> PHP<br>
-                                            <i class="fab fa-laravel fa-2x"></i> Laravel<br>
-                                            <img src="public/assets/images/techs/mysql.png" alt="mysql logo"> MySQL<br>
-                                            <i class="fab fa-git-square fa-2x"></i> git<br>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
-                                            <i class="fab fa-html5 fa-2x"></i> HTML5<br>
-                                            <i class="fab fa-css3-alt fa-2x"></i> CSS3<br>
-                                            <i class="fab fa-sass fa-2x"></i> Sass<br>
-                                            <i class="fab fa-bootstrap fa-2x"></i> Bootstrap<br>
-                                            <i class="fab fa-vuejs fa-2x"></i> Vue<br>
-                                            <img src="public/assets/images/techs/vuetify.png" alt="vuetify logo">
-                                            Vuetify<br>
-                                        </div>
+                                    </nav>
+                                    <div class="tab-content text-secondary mt-3 ml-3" id="nav-tabContentInternal">
+                                       
+                                        <!-- sub-tab "Attuali" -->
+                                       <div class="tab-pane fade show active tab-attuali" id="nav-attuali" role="tabpanel" aria-labelledby="nav-attuali-tab">
+                                            <p>Le tecnologie con cui ho più confidenza e che uso attualmente:</p>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
+                                                    <i class="fab fa-js-square fa-2x"></i> <b>Javascript</b><br>
+                                                    <img src="public/assets/images/techs/typescript.jpg" alt="typescript logo">
+                                                    <b>Typescript</b><br>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
+                                                    <i class="fab fa-node-js fa-2x"></i> <b>Node.js</b><br>
+                                                    <i class="fab fa-react fa-2x"></i> <b>React.js</b><br>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
+                                                    <img src="public/assets/images/techs/postgresql.png" alt="mysql logo"> <b>PostgresSQL</b><br>
+                                                </div>
+                                            </div>
+                                       </div>
+
+                                       <!-- sub-tab "Altre" -->
+                                       <div class="tab-pane fade show tab-altre" id="nav-altre" role="tabpanel" aria-labelledby="nav-altre-tab">
+                                            <p>Altre tecnologie che uso meno o che ho approcciato in passato:</p>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6 col-md-4  pl-2 pr-2">
+                                                    <img src="public/assets/images/techs/next.png" alt="nextjs logo">
+                                                    <b>Next.js</b><br>
+                                                    <img src="public/assets/images/techs/jquery.png" alt="jquery logo">
+                                                    <b>JQuery</b><br>
+                                                    <i class="fab fa-php fa-2x"></i> <b>PHP</b><br>
+                                                    <i class="fab fa-laravel fa-2x"></i> <b>Laravel</b><br>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
+                                                    <img src="public/assets/images/techs/mysql.png" alt="mysql logo"> <b>MySQL</b><br>
+                                                    <i class="fab fa-git-square fa-2x"></i> <b>git</b><br>
+                                                    <i class="fab fa-html5 fa-2x"></i> <b>HTML5</b><br>
+                                                    <i class="fab fa-css3-alt fa-2x"></i> <b>CSS3</b><br>
+                                                  
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-4 pl-2 pr-2">
+                                                    <i class="fab fa-sass fa-2x"></i> <b>Sass</b><br>
+                                                    <i class="fab fa-bootstrap fa-2x"></i> <b>Bootstrap</b><br>
+                                                    <i class="fab fa-vuejs fa-2x"></i> <b>Vue</b><br>
+                                                    <img src="public/assets/images/techs/vuetify.png" alt="vuetify logo">
+                                                    <b>Vuetify</b><br>
+                                                </div>
+                                            </div>
+                                       </div>
                                     </div>
                                 </div>
 
@@ -347,9 +390,7 @@
                                     </div>
                                 </div>
 
-
                             </div>
-
                         </div>
                     </div>
                 </div> <!-- row -->
@@ -655,7 +696,7 @@
     </script>
 
     <!-- my js file -->
-    <script src="public/js/main.min.js"></script>
+    <script src="public/js/main.js"></script>
 </body>
 
 </html>

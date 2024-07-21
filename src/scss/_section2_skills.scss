@@ -17,11 +17,13 @@
 #hard-skills {
     // bordo della tab attiva
     .nav-tabs .nav-link.active,
-    .nav-tabs .nav-item.show .nav-link {
-        color: $light-color;
-        background-color: #fff;
+    .nav-tabs .nav-item.show.nav-link {
+        // color: $dark-color;
+        color: $white-color;
         background-color: $white-color;
-        border-color: $dark-color $dark-color #fff;
+        // background-color: $tab-active-color;
+        background-color: $dark-color;
+        border-color: $dark-color $dark-color $white-color;
     }
 
     .nav-tabs .nav-link {
@@ -34,9 +36,38 @@
         border-bottom: 1px solid $dark-color;
     }
 
-    // colore del titolo delle tab non attive
-    a {
+    // colore del titolo delle tab non attive 
+    a.nav-item.nav-link {
         color: $dark-color;
+        // text-decoration: none;
+        // background-color: transparent;
+    }
+
+
+     // bordo della tab attiva
+     .nav-tabs2 .nav-link.active,
+     .nav-tabs2 .nav-item.show.nav-link2 {
+        color: $dark-color;
+        border-bottom: 6px solid $dark-color;
+        // background-color: $white-color;
+        // border-bottom: 6px solid $tab-active-color;
+        // background-color:$tab-active-color;
+        // border-radius: 5px;
+        // border-color: $dark-color $dark-color ;
+     }
+ 
+     .nav-tabs2 .nav-link {
+        //  border: 1px solid transparent;
+         // border-top-left-radius: 0.25rem;
+         // border-top-right-radius: 0.25rem;
+         padding: 4px 8px;
+         margin-left: 6px;
+      
+     }
+
+
+     a {
+        color: $primary-color;
         // text-decoration: none;
         // background-color: transparent;
     }
@@ -65,6 +96,8 @@
             opacity: 1.0;
         }
     }
+   
 }
+
 
 /* end section2 style */

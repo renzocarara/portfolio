@@ -8,7 +8,7 @@
     "development": "mix",
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
+    "hot": "mix watch --hot -- --port 3080",
     "prod": "npm run production",
     "production": "mix --production"
   },
@@ -24,8 +24,8 @@
     "jquery": "^3.5.1",
     "simplebar": "^5.2.1",
     "tiny-slider": "^2.9.3"
-  },
-  "devDependencies": {
+},
+"devDependencies": {
     "cross-env": "^6.0.3",
     "laravel-mix": "^6.0.49",
     "resolve-url-loader": "^5.0.0",

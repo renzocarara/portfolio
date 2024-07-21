@@ -43,7 +43,7 @@ html::-webkit-scrollbar-track {
 // sezione per le pagine diverse da quella principale (404, indexoffline, contact_result)
 .section-page {
     // viewport - (min altezza footer + altezza header)
-    height: calc(100vh - calc(#{$minfFooterHeight} + #{$headerHeight}));
+    height: calc(100vh - calc(#{$minFooterHeight} + #{$headerHeight}));
 
     i {
         color: $primary-color;
