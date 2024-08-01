@@ -2,7 +2,6 @@
 gtag.script_js
 _altro
 node_modules/
-package-lock.json
 mix-manifest.json
 TEMP/
 .htaccess
