@@ -106,6 +106,7 @@ function createSlides(slidesDataJSObj) {
       title: slidesDataJSObj[i].title,
       img_filename: slidesDataJSObj[i].img_filename,
       alt_img_desc: slidesDataJSObj[i].alt_img_desc,
+      badge: slidesDataJSObj[i].badge,
     };
 
     // leggo il codice html dal template HANDLEBARS
@@ -140,14 +141,19 @@ function createSlideModals(slidesDataJSObj) {
       title: slidesDataJSObj[i].title,
       description: slidesDataJSObj[i].description,
       technologies: slidesDataJSObj[i].technologies,
-      code_link: slidesDataJSObj[i].code_link,
+      code_link: slidesDataJSObj[i].code_link == "not_available"
+          ? ""
+          : '<a href="' +
+            slidesDataJSObj[i].code_link +
+            '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza il codice"><i class="fas fa-code fa-3x text-link mr-3"></i></a>',
       site_link:
         slidesDataJSObj[i].site_link == "not_available"
           ? ""
           : '<a href="' +
             slidesDataJSObj[i].site_link +
             '" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l\'applicazione"><i class="fas fa-desktop fa-3x text-link mr-3"></i></a>',
-    };
+      badge: slidesDataJSObj[i].badge,
+        };
 
     // leggo il codice html dal template HANDLEBARS
     var modalTemplate = $("#template-slide-modal").html();

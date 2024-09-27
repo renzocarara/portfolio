@@ -656,8 +656,12 @@
     <!-- template per la creazione delle slides all' interno dello slider -->
     <script id="template-slide" type="text/x-handlebars-template">
         {{!-- template per la creazione di una singola slide dello slider --}}
-        <div class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal"><img class="img-fluid slide-border" src="public/assets/images/slider/{{ img_filename }}"
-                alt="{{ alt_img_desc }}"></div>
+        <div class="my-slide tooltip-on-dynamic-el" data-toggle="modal" data-placement="top" title="{{ title }}" data-target="#{{ name }}Modal">
+            <div class="badge mb-1">{{{badge}}}</div>
+            <img class="img-fluid slide-border" src="public/assets/images/slider/{{ img_filename }}"
+                alt="{{ alt_img_desc }}">
+        </div>
+        
     </script>
 
     <!-- template per la creazione dei modal associati ad ogni singola slide -->
@@ -667,6 +671,7 @@
                 <div class="modal-content bg-dark-color text-light">
                     <div class="modal-header">
                         <h5 class="modal-title" id="{{ name }}ModalLabel"><strong>{{ title }}</strong></h5>
+                        <div class="badge ml-3 mt-1">{{{badge}}}</div>
                         <button type="button" class="close text-link" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true"><i class="fas fa-times fa-lg"></i></span>
                         </button>
@@ -679,8 +684,10 @@
                         <strong>Tecnologie</strong>: {{ technologies }}
                     </div>
                     <div class="modal-footer">
+                        {{{ code_link }}}
                         {{{ site_link }}}
-                        <a href="{{ code_link }}" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Esplora il codice"><i class="fas fa-code fa-3x text-link"></i></a>
+                        <!-- <a href="{{ site_link }}" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Visualizza l'applicazione"><i class="fas fa-tv fa-3x text-link"></i></a>
+                        <a href="{{ code_link }}" target="_blank" class="tooltip-on-dynamic-el" data-placement="top" title="Esplora il codice"><i class="fas fa-code fa-3x text-link"></i></a> -->
                     </div>
                 </div>
             </div>

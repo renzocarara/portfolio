@@ -198,4 +198,12 @@ h6 {
 .tns-nav > .tns-nav-active {
     background: $primary-color;
 }
+
+.badge {
+    color: #026979;
+    text-shadow: none;
+    background-color: rgb(254, 255, 255);
+    border-radius: 50px;
+    border: 1px solid aqua;
+}
 /*  end commom style */
