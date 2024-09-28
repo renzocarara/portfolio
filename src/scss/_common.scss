@@ -200,10 +200,14 @@ h6 {
 }
 
 .badge {
-    color: #026979;
+    position: absolute; /* Positions the badge relative to the container */
+    top: 10px; /* Distance from the top of the container */
+    right: 30px; /* Distance from the right of the container */
+
+    color: white;
     text-shadow: none;
-    background-color: rgb(254, 255, 255);
+    background-color: #026979;
     border-radius: 50px;
-    border: 1px solid aqua;
+    border: 2px solid aqua;
 }
 /*  end commom style */

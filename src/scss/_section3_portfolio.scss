@@ -13,7 +13,15 @@
     background-size: 400% 400%;
     animation: gradient 25s ease infinite;
 
+
+    .modal-container {
+        position: relative;
+    }
+
     .my-slide {
+
+        position: relative;
+
         img {
             height: 100%;
             width: 100%;
